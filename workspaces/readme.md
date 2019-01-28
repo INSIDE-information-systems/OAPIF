@@ -1,6 +1,7 @@
 app-schema configuration files go here
 
 Currently, we have the following files:
+- workspaces.zip - all GeoServer workspaces required for eposb
 - MappingEPOS_DC.xml - App Schema Mapping file for eposb:Borehole
 - Views_DB.sql - Fixes for various views from app_diffussion_wfs3, either adding missing columns required for mapping, or missing views not yet defined. All implemented as materialized views to keep separate from BRGM work. Should eventually not be required when the views in app_diffussion_wfs3 have been adjusted as required.
 - Views_AppSchema.sql - DB Views required for App Schema Mapping. Contains the following views corresponding the the listed FeatureTypes and DataTypes:
