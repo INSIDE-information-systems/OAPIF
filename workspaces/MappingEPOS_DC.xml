@@ -798,5 +798,5 @@ www.datacove.eu
 				
 			</attributeMappings>
 		</FeatureTypeMapping>
-	</typeMappings>
+	</typeMappings> 
 </as:AppSchemaDataAccess>
