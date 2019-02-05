@@ -37,9 +37,9 @@ AS
     ouv.latitude,
     ouv.longitude,
     st_pointfromtext(((('POINT('::text || ouv.latitude) || ' '::text) || ouv.longitude) || ')'::text, 4326) AS loc,
-    fac.date_debut,
-    fac.date_fin,
-    fac.code_station
+	null AS date_debut, --fac.date_debut,
+    null AS date_fin, --fac.date_fin,
+    null AS code_station --fac.code_station
    FROM app_diffussion_wfs3.bss_dossier_mv dos
      LEFT JOIN app_diffussion_wfs3.bss_ouvrage_mv ouv ON dos.indice::text = ouv.indice::text
      LEFT JOIN ( SELECT bss_profondeur_investigation.indice,
@@ -62,8 +62,8 @@ AS
      LEFT JOIN app_diffussion_wfs3.bss_profondeur_accessible dep ON dos.indice::text = dep.indice::text
      LEFT JOIN app_diffussion_wfs3.bsseau_point_eau pteau ON dos.indice::text = pteau.indice::text
      LEFT JOIN app_diffussion_wfs3.referentiel_interne_lex_communes com ON dos.num_commune::text = com.num_commune::text AND dos.num_departement::text = com.num_departement::text
-     LEFT JOIN app_diffussion_wfs3.bsseau_pe_sh fac ON dos.indice::text = fac.indice::text
-  WHERE NOT ouv.libelle IS NULL AND NOT dep.profondeur_accessible IS NULL
+     -- LEFT JOIN app_diffussion_wfs3.bsseau_pe_sh fac ON dos.indice::text = fac.indice::text
+  --WHERE NOT ouv.libelle IS NULL AND NOT dep.profondeur_accessible IS NULL
  LIMIT 1000;
  
 		
@@ -115,7 +115,7 @@ AS
      LEFT JOIN app_diffussion_wfs3.bsseau_pe_hg_bdlisa_methode met ON geo.id = met.id_pe_hg_bdlisa
      LEFT JOIN app_diffussion_wfs3.referentiel_interne_lex_methode_association_mv meta ON met.code_methode_association = meta.code
      LEFT JOIN app_diffussion_wfs3.referentiel_interne_lex_qualite_association qua ON geo.code_qualite_association = qua.code
-     LEFT JOIN app_diffussion_wfs3.referentiel_externe_ln_entite_hydrogeol_bdlisa nam ON geo.code_entite::text = nam.code_entite::text;
+	 LEFT JOIN app_diffussion_wfs3.referentiel_externe_ln_entite_hydrogeol_bdlisa nam ON geo.code_entite::text = nam.code_entite::text AND geo.code_entite_ref = nam.code_entite_ref;
 		
 CREATE MATERIALIZED VIEW app_diffussion_wfs3.ks_parameter_mv
 AS
