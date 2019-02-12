@@ -1,1302 +1,144 @@
 {
-    "crs": null,
-    "features": [
-        {
-            "geometry": null,
-            "id": "https://data.geoscience.fr/id/well/BSS000AAAA",
-			"type": "Feature",
-            "properties": {
-				"featureType": "Borehole",
-				"type": {
-					"@href": "http://vocabulary.odm2.org/samplingfeaturetype/borehole/",
-					"@title": "borehole"
+	"crs": null,
+	"features": [{
+		"id": "https://data.geoscience.fr/id/well/BSS000AAAA",
+		"type": "Feature",
+		"geometry": {
+			"type": "Point",
+			"coordinates": [51.0684, 1.4298]
+		},
+		"properties": {
+			"featureType": "Borehole",
+			"type": {
+				"@href": "http://vocabulary.odm2.org/samplingfeaturetype/borehole/",
+				"@title": "borehole"
+			},
+			"sampledFeature": {
+				"@href": "https://sweet.jpl.nasa.gov/2.3/realmEarthReference.owl#EarthLithosphere",
+				"@title": "Lithosphere"
+			},
+			"custodian": [{
+				"dataType": "Custodian",
+				"custodian": {
+					"dataType": "CI_ResponsibleParty",
+					"organisationName": "BRGM",
+					"role": {
+						"dataType": "CI_RoleCode",
+						"@codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml",
+						"@codeListValue": "custodian"
+					}
 				},
-				"sampledFeature": {
-					"@href": "https://sweet.jpl.nasa.gov/2.3/realmEarthReference.owl#EarthLithosphere",
-					"@title": "Lithosphere"
-				},		
-				"custodian": [
-                    {
-					"dataType": "Custodian",
-					"custodian": {
-						"dataType":"CI_ResponsibleParty",
-						"organisationName": "BRGM",
-						"role":  {
-							"dataType":"CI_RoleCode",
-							"@codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml",
-							"@codeListValue": "custodian"
-						}
+				"custodianPeriod": {
+					"dataType": "TimePeriod",
+					"beginTime": "2015-06-15T14:59:45Z",
+					"endTime": "2017-06-15T14:59:45Z"
+				}
+			}],
+			"legalAccessLevel": {
+				"featureType": "MD_LegalConstraints",
+				"accessConstraints": {
+					"dataType": "MD_RestrictionCode",
+					"@codeList": "",
+					"@codeListValue": "openaccess"
+				},
+				"useConstraints": {
+					"dataType": "MD_RestrictionCode",
+					"@codeListValue": "openaccess",
+					"@codeList": ""
+				}
+			},
+			"length": {
+				"value": 82,
+				"@uom": "http://qudt.org/vocab/unit/M"
+			},
+			"operator": {
+				"dataType": "Operator",
+				"operator": {
+					"dataType": "CI_ResponsibleParty",
+					"organisationName": {
+						"value": "BRGM"
 					},
-					"custodianPeriod":{}
+					"role": {
+						"dataType": "CI_RoleCode",
+						"@codeListValue": "owner",
+						"@codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml"
 					}
-                ],
-				"legalAccessLevel": {
-					"featureType": "MD_LegalConstraints",
-					"accessConstraints": {
-						"dataType":"MD_RestrictionCode",
-						"@codeList": "",
-						"@codeListValue": "openaccess"
-					},
-					"useConstraints": {
-						"dataType":"MD_RestrictionCode",
-						"@codeListValue": "openaccess",
-						"@codeList": ""
-					}
+				}
+			},
+			"referenceElevation": {
+				"dataType": "Elevation",
+				"elevation": {
+					"value": -32,
+					"@srsName": "http://www.opengis.net/def/crs/EPSG/0/5720",
+					"@srsDimension": "1",
+					"@uomLabels": "m"
 				},
-                "length": {
-                    "value = "82,
-                    "@uom": "http://qudt.org/vocab/unit/M"
-                },
-                "operator": {
-					"dataType":"Operator",
-					"operator": {
-					"dataType":"CI_ResponsibleParty",
-						"organisationName": {
-							"value": "BRGM"
-						},
-						"role": {
-							"dataType":"CI_RoleCode",
-							"@codeListValue": "owner",
-							"@codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml"
-						}
-					}
-                },
-                "referenceElevation": {
-					"dataType":"Elevation",
-                    "elevation": {
-						"value": -32,
-						"@srsName": "http://www.opengis.net/def/crs/EPSG/0/5720"
-						"@srsDimension": "1"
-						"@uomLabels": "m"
-                    },
-                    "elevationMeasurementMethod": {
-						"@href": "http://id.eaufrance.fr/nsa/892#XXX";
-                        "@title": "DGPS as Dummy"
-                    },
-                    "elevationType": {
-                        "@href": "http://resource.europe-geology.eu/vocabs/elevationtype/groundSurface",
-                        "@title": "Ground surface"
-                    }
-                },
-				"startPoint":{
-					"@href": "http://resource.europe-geology.eu/vocabs/StartPoint/naturalLandSurface",
-					"@title": "naturalLandSurface"
-				},
-				"status":{
-					"@href": "http://id.eaufrance.fr/nsa/146#XXX",
-					"@title": "Opérationnel"
-                },
-				"boreCollarPositionalAccuracy": {
-					"@uom": "http://qudt.org/vocab/unit/CM"
-                },
-				"locationMeasurementMethod": {
-					"dataType": "ReferenceType",
-					"@href": "http://id.eaufrance.fr/nsa/917#XXX",                    
+				"elevationMeasurementMethod": {
+					"@href": "http://id.eaufrance.fr/nsa/892#XXX",
 					"@title": "DGPS as Dummy"
-                },
-				"accessibleDepth": {
-                    "dataType":"AccessibleDepth",
-                    "depthObservationTime": {
-						"dataType":"TimeInstant", 
-						"timePosition": "2007-05-20T22:00:00Z"
-					}
 				},
-
-				
-				
-				
-				
-				
-	
-				"startPoint": [
-                    {
-                        "href": "http://resource.europe-geology.eu/vocabs/StartPoint/naturalLandSurface"
-                    },
-                    {
-                        "title": "naturalLandSurface"
-                    }
-                ],
-				,
-
-                
-                "status": [
-                    {
-                        "href": "http://id.eaufrance.fr/nsa/146#XXX"
-                    },
-                    {
-                        "title": "Opérationnel"
-                    }
-                ],
-                
-				"accessibleDepth": {
-                    "AccessibleDepth": {
-                        "depthObservationTime": {
-                            "TimeInstant": {
-                                "timePosition": {
-                                    "simpleContent": "2007-05-20T22:00:00Z"
-                                }
-                            }
-                        }
-                    }
-                },
-                "bholeHeadworks": [
-                    {
-                        "collarElevation": [
-                            -32,
-                            {
-                                "srsName": "http://www.opengis.net/def/crs/EPSG/0/5720"
-                            },
-                            {
-                                "srsDimension": "1"
-                            },
-                            {
-                                "uomLabels": "m"
-                            }
-                        ],
-                        "collarLocation": {
-                            "coordinates": [
-                                51.0684,
-                                1.4298
-                            ],
-                            "type": "Point"
-                        }
-                    }
-                ],
-                "boreCollarPositionalAccuracy": [
-                    {
-                        "uom": "http://qudt.org/vocab/unit/CM"
-                    }
-                ],
-
-                "identifier": [
-                    "BSS000AAAA",
-                    {
-                        "codeSpace": "http://www.ietf.org/rfc/rfc2616"
-                    }
-                ],
-                "length": [
-                    82,
-                    {
-                        "uom": "http://qudt.org/vocab/unit/M"
-                    }
-                ],
-                "lifeCycleInfo": {
-                    "LifeCycleInfo": {
-                        "creationDate": {
-                            "TimeInstant": {
-                                "timePosition": {
-                                    "simpleContent": "2007-05-20T22:00:00Z"
-                                }
-                            }
-                        },
-                        "status": [
-                            {
-                                "href": "http://id.eaufrance.fr/nsa/390#XXX"
-                            },
-                            {
-                                "title": "Validé"
-                            }
-                        ],
-                        "updateDate": {
-                            "TimeInstant": {
-                                "timePosition": {
-                                    "simpleContent": "2015-06-15T14:59:45Z"
-                                }
-                            }
-                        }
-                    }
-                },
-                "locatedOnAdminUnit": [
-                    {
-                        "href": "6262774"
-                    },
-                    {
-                        "title": "SANGATTE"
-                    }
-                ],
-                "locationMeasurementMethod": [
-                    {
-                        "href": "http://id.eaufrance.fr/nsa/917#XXX"
-                    },
-                    {
-                        "title": "DGPS as Dummy"
-                    }
-                ],
-                "operator": {
-                    "Operator": {
-                        "operator": {
-                            "CI_ResponsibleParty": {
-                                "organisationName": {
-                                    "CharacterString": "BRGM"
-                                },
-                                "role": {
-                                    "CI_RoleCode": [
-                                        {
-                                            "codeListValue": "owner"
-                                        },
-                                        {
-                                            "codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml"
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                "referenceElevation": {
-                    "Elevation": {
-                        "elevation": [
-                            -32,
-                            {
-                                "srsName": "http://www.opengis.net/def/crs/EPSG/0/5720"
-                            },
-                            {
-                                "srsDimension": "1"
-                            },
-                            {
-                                "uomLabels": "m"
-                            }
-                        ],
-                        "elevationMeasurementMethod": [
-                            {
-                                "href": "http://id.eaufrance.fr/nsa/892#XXX"
-                            },
-                            {
-                                "title": "DGPS as Dummy"
-                            }
-                        ],
-                        "elevationType": [
-                            {
-                                "href": "http://resource.europe-geology.eu/vocabs/elevationtype/groundSurface"
-                            },
-                            {
-                                "title": "Ground surface"
-                            }
-                        ]
-                    }
-                }
-            }
-        },
-        {
-            "geometry": null, 	
-            "id": "0001000002",
-            "properties": {
-                "accessibleDepth": {
-                    "AccessibleDepth": {
-                        "depthObservationTime": {
-                            "TimeInstant": {
-                                "timePosition": {
-                                    "simpleContent": "1998-03-11T10:55:17Z"
-                                }
-                            }
-                        }
-                    }
-                },
-                "bholeHeadworks": [
-                    {
-                        "collarElevation": [
-                            -30.8,
-                            {
-                                "srsName": "http://www.opengis.net/def/crs/EPSG/0/5720"
-                            },
-                            {
-                                "srsDimension": "1"
-                            },
-                            {
-                                "uomLabels": "m"
-                            }
-                        ],
-                        "collarLocation": {
-                            "coordinates": [
-                                51.0744,
-                                1.4191
-                            ],
-                            "type": "Point"
-                        }
-                    }
-                ],
-                "boreCollarPositionalAccuracy": [
-                    {
-                        "uom": "http://qudt.org/vocab/unit/CM"
-                    }
-                ],
-                "custodian": {
-                    "Custodian": {
-                        "custodian": {
-                            "CI_ResponsibleParty": {
-                                "organisationName": {
-                                    "CharacterString": "BRGM"
-                                },
-                                "role": {
-                                    "CI_RoleCode": [
-                                        {
-                                            "codeListValue": "custodian"
-                                        },
-                                        {
-                                            "codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml"
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                "identifier": [
-                    "BSS000AAAB",
-                    {
-                        "codeSpace": "http://www.ietf.org/rfc/rfc2616"
-                    }
-                ],
-                "legalAccessLevel": {
-                    "MD_LegalConstraints": {
-                        "accessConstraints": {
-                            "MD_RestrictionCode": [
-                                {
-                                    "codeListValue": "openaccess"
-                                },
-                                {
-                                    "codeList": ""
-                                }
-                            ]
-                        },
-                        "useConstraints": {
-                            "MD_RestrictionCode": [
-                                {
-                                    "codeListValue": "openaccess"
-                                },
-                                {
-                                    "codeList": ""
-                                }
-                            ]
-                        }
-                    }
-                },
-                "length": [
-                    77.42,
-                    {
-                        "uom": "http://qudt.org/vocab/unit/M"
-                    }
-                ],
-                "lifeCycleInfo": {
-                    "LifeCycleInfo": {
-                        "creationDate": {
-                            "TimeInstant": {
-                                "timePosition": {
-                                    "simpleContent": "1998-03-11T10:55:17Z"
-                                }
-                            }
-                        },
-                        "status": [
-                            {
-                                "href": "http://id.eaufrance.fr/nsa/390#XXX"
-                            },
-                            {
-                                "title": "Validé"
-                            }
-                        ],
-                        "updateDate": {
-                            "TimeInstant": {
-                                "timePosition": {
-                                    "simpleContent": "2014-01-24T10:10:25Z"
-                                }
-                            }
-                        }
-                    }
-                },
-                "locatedOnAdminUnit": [
-                    {
-                        "href": "6262774"
-                    },
-                    {
-                        "title": "SANGATTE"
-                    }
-                ],
-                "locationMeasurementMethod": [
-                    {
-                        "href": "http://id.eaufrance.fr/nsa/917#XXX"
-                    },
-                    {
-                        "title": "DGPS as Dummy"
-                    }
-                ],
-                "operator": {
-                    "Operator": {
-                        "operator": {
-                            "CI_ResponsibleParty": {
-                                "organisationName": {
-                                    "CharacterString": "BRGM"
-                                },
-                                "role": {
-                                    "CI_RoleCode": [
-                                        {
-                                            "codeListValue": "owner"
-                                        },
-                                        {
-                                            "codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml"
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                "referenceElevation": {
-                    "Elevation": {
-                        "elevation": [
-                            -30.8,
-                            {
-                                "srsName": "http://www.opengis.net/def/crs/EPSG/0/5720"
-                            },
-                            {
-                                "srsDimension": "1"
-                            },
-                            {
-                                "uomLabels": "m"
-                            }
-                        ],
-                        "elevationMeasurementMethod": [
-                            {
-                                "href": "http://id.eaufrance.fr/nsa/892#XXX"
-                            },
-                            {
-                                "title": "DGPS as Dummy"
-                            }
-                        ],
-                        "elevationType": [
-                            {
-                                "href": "http://resource.europe-geology.eu/vocabs/elevationtype/groundSurface"
-                            },
-                            {
-                                "title": "Ground surface"
-                            }
-                        ]
-                    }
-                },
-                "sampledFeature": [
-                    {
-                        "href": "https://sweet.jpl.nasa.gov/2.3/realmEarthReference.owl#EarthLithosphere"
-                    },
-                    {
-                        "title": "Lithosphere"
-                    }
-                ],
-                "startPoint": [
-                    {
-                        "href": "http://resource.europe-geology.eu/vocabs/StartPoint/naturalLandSurface"
-                    },
-                    {
-                        "title": "naturalLandSurface"
-                    }
-                ],
-                "status": [
-                    {
-                        "href": "http://id.eaufrance.fr/nsa/146#XXX"
-                    },
-                    {
-                        "title": "Opérationnel"
-                    }
-                ],
-                "type": [
-                    {
-                        "href": "http://vocabulary.odm2.org/samplingfeaturetype/borehole/"
-                    },
-                    {
-                        "title": "borehole"
-                    }
-                ]
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": null,
-            "id": "0001000003",
-            "properties": {
-                "accessibleDepth": {
-                    "AccessibleDepth": {
-                        "depthObservationTime": {
-                            "TimeInstant": {
-                                "timePosition": {
-                                    "simpleContent": "1998-03-11T10:55:17Z"
-                                }
-                            }
-                        }
-                    }
-                },
-                "bholeHeadworks": [
-                    {
-                        "collarElevation": [
-                            -34.3,
-                            {
-                                "srsName": "http://www.opengis.net/def/crs/EPSG/0/5720"
-                            },
-                            {
-                                "srsDimension": "1"
-                            },
-                            {
-                                "uomLabels": "m"
-                            }
-                        ],
-                        "collarLocation": {
-                            "coordinates": [
-                                51.0799,
-                                1.4096
-                            ],
-                            "type": "Point"
-                        }
-                    }
-                ],
-                "boreCollarPositionalAccuracy": [
-                    {
-                        "uom": "http://qudt.org/vocab/unit/CM"
-                    }
-                ],
-                "custodian": {
-                    "Custodian": {
-                        "custodian": {
-                            "CI_ResponsibleParty": {
-                                "organisationName": {
-                                    "CharacterString": "BRGM"
-                                },
-                                "role": {
-                                    "CI_RoleCode": [
-                                        {
-                                            "codeListValue": "custodian"
-                                        },
-                                        {
-                                            "codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml"
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                "identifier": [
-                    "BSS000AAAC",
-                    {
-                        "codeSpace": "http://www.ietf.org/rfc/rfc2616"
-                    }
-                ],
-                "legalAccessLevel": {
-                    "MD_LegalConstraints": {
-                        "accessConstraints": {
-                            "MD_RestrictionCode": [
-                                {
-                                    "codeListValue": "openaccess"
-                                },
-                                {
-                                    "codeList": ""
-                                }
-                            ]
-                        },
-                        "useConstraints": {
-                            "MD_RestrictionCode": [
-                                {
-                                    "codeListValue": "openaccess"
-                                },
-                                {
-                                    "codeList": ""
-                                }
-                            ]
-                        }
-                    }
-                },
-                "length": [
-                    79.86,
-                    {
-                        "uom": "http://qudt.org/vocab/unit/M"
-                    }
-                ],
-                "lifeCycleInfo": {
-                    "LifeCycleInfo": {
-                        "creationDate": {
-                            "TimeInstant": {
-                                "timePosition": {
-                                    "simpleContent": "1998-03-11T10:55:17Z"
-                                }
-                            }
-                        },
-                        "status": [
-                            {
-                                "href": "http://id.eaufrance.fr/nsa/390#XXX"
-                            },
-                            {
-                                "title": "Validé"
-                            }
-                        ],
-                        "updateDate": {
-                            "TimeInstant": {
-                                "timePosition": {
-                                    "simpleContent": "2008-12-22T16:41:32Z"
-                                }
-                            }
-                        }
-                    }
-                },
-                "locatedOnAdminUnit": [
-                    {
-                        "href": "6262774"
-                    },
-                    {
-                        "title": "SANGATTE"
-                    }
-                ],
-                "locationMeasurementMethod": [
-                    {
-                        "href": "http://id.eaufrance.fr/nsa/917#XXX"
-                    },
-                    {
-                        "title": "DGPS as Dummy"
-                    }
-                ],
-                "operator": {
-                    "Operator": {
-                        "operator": {
-                            "CI_ResponsibleParty": {
-                                "organisationName": {
-                                    "CharacterString": "BRGM"
-                                },
-                                "role": {
-                                    "CI_RoleCode": [
-                                        {
-                                            "codeListValue": "owner"
-                                        },
-                                        {
-                                            "codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml"
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                "referenceElevation": {
-                    "Elevation": {
-                        "elevation": [
-                            -34.3,
-                            {
-                                "srsName": "http://www.opengis.net/def/crs/EPSG/0/5720"
-                            },
-                            {
-                                "srsDimension": "1"
-                            },
-                            {
-                                "uomLabels": "m"
-                            }
-                        ],
-                        "elevationMeasurementMethod": [
-                            {
-                                "href": "http://id.eaufrance.fr/nsa/892#XXX"
-                            },
-                            {
-                                "title": "DGPS as Dummy"
-                            }
-                        ],
-                        "elevationType": [
-                            {
-                                "href": "http://resource.europe-geology.eu/vocabs/elevationtype/groundSurface"
-                            },
-                            {
-                                "title": "Ground surface"
-                            }
-                        ]
-                    }
-                },
-                "sampledFeature": [
-                    {
-                        "href": "https://sweet.jpl.nasa.gov/2.3/realmEarthReference.owl#EarthLithosphere"
-                    },
-                    {
-                        "title": "Lithosphere"
-                    }
-                ],
-                "startPoint": [
-                    {
-                        "href": "http://resource.europe-geology.eu/vocabs/StartPoint/naturalLandSurface"
-                    },
-                    {
-                        "title": "naturalLandSurface"
-                    }
-                ],
-                "status": [
-                    {
-                        "href": "http://id.eaufrance.fr/nsa/146#XXX"
-                    },
-                    {
-                        "title": "Opérationnel"
-                    }
-                ],
-                "type": [
-                    {
-                        "href": "http://vocabulary.odm2.org/samplingfeaturetype/borehole/"
-                    },
-                    {
-                        "title": "borehole"
-                    }
-                ]
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": null,
-            "id": "0001000004",
-            "properties": {
-                "accessibleDepth": {
-                    "AccessibleDepth": {
-                        "depthObservationTime": {
-                            "TimeInstant": {
-                                "timePosition": {
-                                    "simpleContent": "1998-03-11T10:55:17Z"
-                                }
-                            }
-                        }
-                    }
-                },
-                "bholeHeadworks": [
-                    {
-                        "collarElevation": [
-                            -29.9,
-                            {
-                                "srsName": "http://www.opengis.net/def/crs/EPSG/0/5720"
-                            },
-                            {
-                                "srsDimension": "1"
-                            },
-                            {
-                                "uomLabels": "m"
-                            }
-                        ],
-                        "collarLocation": {
-                            "coordinates": [
-                                51.0859,
-                                1.3993
-                            ],
-                            "type": "Point"
-                        }
-                    }
-                ],
-                "boreCollarPositionalAccuracy": [
-                    {
-                        "uom": "http://qudt.org/vocab/unit/CM"
-                    }
-                ],
-                "custodian": {
-                    "Custodian": {
-                        "custodian": {
-                            "CI_ResponsibleParty": {
-                                "organisationName": {
-                                    "CharacterString": "BRGM"
-                                },
-                                "role": {
-                                    "CI_RoleCode": [
-                                        {
-                                            "codeListValue": "custodian"
-                                        },
-                                        {
-                                            "codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml"
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                "identifier": [
-                    "BSS000AAAD",
-                    {
-                        "codeSpace": "http://www.ietf.org/rfc/rfc2616"
-                    }
-                ],
-                "legalAccessLevel": {
-                    "MD_LegalConstraints": {
-                        "accessConstraints": {
-                            "MD_RestrictionCode": [
-                                {
-                                    "codeListValue": "openaccess"
-                                },
-                                {
-                                    "codeList": ""
-                                }
-                            ]
-                        },
-                        "useConstraints": {
-                            "MD_RestrictionCode": [
-                                {
-                                    "codeListValue": "openaccess"
-                                },
-                                {
-                                    "codeList": ""
-                                }
-                            ]
-                        }
-                    }
-                },
-                "length": [
-                    80.77,
-                    {
-                        "uom": "http://qudt.org/vocab/unit/M"
-                    }
-                ],
-                "lifeCycleInfo": {
-                    "LifeCycleInfo": {
-                        "creationDate": {
-                            "TimeInstant": {
-                                "timePosition": {
-                                    "simpleContent": "1998-03-11T10:55:17Z"
-                                }
-                            }
-                        },
-                        "status": [
-                            {
-                                "href": "http://id.eaufrance.fr/nsa/390#XXX"
-                            },
-                            {
-                                "title": "Validé"
-                            }
-                        ],
-                        "updateDate": {
-                            "TimeInstant": {
-                                "timePosition": {
-                                    "simpleContent": "2008-12-22T16:41:32Z"
-                                }
-                            }
-                        }
-                    }
-                },
-                "locatedOnAdminUnit": [
-                    {
-                        "href": "6262774"
-                    },
-                    {
-                        "title": "SANGATTE"
-                    }
-                ],
-                "locationMeasurementMethod": [
-                    {
-                        "href": "http://id.eaufrance.fr/nsa/917#XXX"
-                    },
-                    {
-                        "title": "DGPS as Dummy"
-                    }
-                ],
-                "operator": {
-                    "Operator": {
-                        "operator": {
-                            "CI_ResponsibleParty": {
-                                "organisationName": {
-                                    "CharacterString": "BRGM"
-                                },
-                                "role": {
-                                    "CI_RoleCode": [
-                                        {
-                                            "codeListValue": "owner"
-                                        },
-                                        {
-                                            "codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml"
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                "referenceElevation": {
-                    "Elevation": {
-                        "elevation": [
-                            -29.9,
-                            {
-                                "srsName": "http://www.opengis.net/def/crs/EPSG/0/5720"
-                            },
-                            {
-                                "srsDimension": "1"
-                            },
-                            {
-                                "uomLabels": "m"
-                            }
-                        ],
-                        "elevationMeasurementMethod": [
-                            {
-                                "href": "http://id.eaufrance.fr/nsa/892#XXX"
-                            },
-                            {
-                                "title": "DGPS as Dummy"
-                            }
-                        ],
-                        "elevationType": [
-                            {
-                                "href": "http://resource.europe-geology.eu/vocabs/elevationtype/groundSurface"
-                            },
-                            {
-                                "title": "Ground surface"
-                            }
-                        ]
-                    }
-                },
-                "sampledFeature": [
-                    {
-                        "href": "https://sweet.jpl.nasa.gov/2.3/realmEarthReference.owl#EarthLithosphere"
-                    },
-                    {
-                        "title": "Lithosphere"
-                    }
-                ],
-                "startPoint": [
-                    {
-                        "href": "http://resource.europe-geology.eu/vocabs/StartPoint/naturalLandSurface"
-                    },
-                    {
-                        "title": "naturalLandSurface"
-                    }
-                ],
-                "status": [
-                    {
-                        "href": "http://id.eaufrance.fr/nsa/146#XXX"
-                    },
-                    {
-                        "title": "Opérationnel"
-                    }
-                ],
-                "type": [
-                    {
-                        "href": "http://vocabulary.odm2.org/samplingfeaturetype/borehole/"
-                    },
-                    {
-                        "title": "borehole"
-                    }
-                ]
-            },
-            "type": "Feature"
-        },
-        {
-            "geometry": null,
-            "id": "0001000005",
-            "properties": {
-                "accessibleDepth": {
-                    "AccessibleDepth": {
-                        "depthObservationTime": {
-                            "TimeInstant": {
-                                "timePosition": {
-                                    "simpleContent": "1998-03-11T10:55:17Z"
-                                }
-                            }
-                        }
-                    }
-                },
-                "bholeHeadworks": [
-                    {
-                        "collarElevation": [
-                            -28.8,
-                            {
-                                "srsName": "http://www.opengis.net/def/crs/EPSG/0/5720"
-                            },
-                            {
-                                "srsDimension": "1"
-                            },
-                            {
-                                "uomLabels": "m"
-                            }
-                        ],
-                        "collarLocation": {
-                            "coordinates": [
-                                51.0913,
-                                1.3904
-                            ],
-                            "type": "Point"
-                        }
-                    }
-                ],
-                "boreCollarPositionalAccuracy": [
-                    {
-                        "uom": "http://qudt.org/vocab/unit/CM"
-                    }
-                ],
-                "custodian": {
-                    "Custodian": {
-                        "custodian": {
-                            "CI_ResponsibleParty": {
-                                "organisationName": {
-                                    "CharacterString": "BRGM"
-                                },
-                                "role": {
-                                    "CI_RoleCode": [
-                                        {
-                                            "codeListValue": "custodian"
-                                        },
-                                        {
-                                            "codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml"
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                "identifier": [
-                    "BSS000AAAE",
-                    {
-                        "codeSpace": "http://www.ietf.org/rfc/rfc2616"
-                    }
-                ],
-                "legalAccessLevel": {
-                    "MD_LegalConstraints": {
-                        "accessConstraints": {
-                            "MD_RestrictionCode": [
-                                {
-                                    "codeListValue": "openaccess"
-                                },
-                                {
-                                    "codeList": ""
-                                }
-                            ]
-                        },
-                        "useConstraints": {
-                            "MD_RestrictionCode": [
-                                {
-                                    "codeListValue": "openaccess"
-                                },
-                                {
-                                    "codeList": ""
-                                }
-                            ]
-                        }
-                    }
-                },
-                "length": [
-                    77.11,
-                    {
-                        "uom": "http://qudt.org/vocab/unit/M"
-                    }
-                ],
-                "lifeCycleInfo": {
-                    "LifeCycleInfo": {
-                        "creationDate": {
-                            "TimeInstant": {
-                                "timePosition": {
-                                    "simpleContent": "1998-03-11T10:55:17Z"
-                                }
-                            }
-                        },
-                        "status": [
-                            {
-                                "href": "http://id.eaufrance.fr/nsa/390#XXX"
-                            },
-                            {
-                                "title": "Validé"
-                            }
-                        ],
-                        "updateDate": {
-                            "TimeInstant": {
-                                "timePosition": {
-                                    "simpleContent": "2008-12-22T16:41:32Z"
-                                }
-                            }
-                        }
-                    }
-                },
-                "locatedOnAdminUnit": [
-                    {
-                        "href": "6262774"
-                    },
-                    {
-                        "title": "SANGATTE"
-                    }
-                ],
-                "locationMeasurementMethod": [
-                    {
-                        "href": "http://id.eaufrance.fr/nsa/917#XXX"
-                    },
-                    {
-                        "title": "DGPS as Dummy"
-                    }
-                ],
-                "operator": {
-                    "Operator": {
-                        "operator": {
-                            "CI_ResponsibleParty": {
-                                "organisationName": {
-                                    "CharacterString": "BRGM"
-                                },
-                                "role": {
-                                    "CI_RoleCode": [
-                                        {
-                                            "codeListValue": "owner"
-                                        },
-                                        {
-                                            "codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml"
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                },
-                "referenceElevation": {
-                    "Elevation": {
-                        "elevation": [
-                            -28.8,
-                            {
-                                "srsName": "http://www.opengis.net/def/crs/EPSG/0/5720"
-                            },
-                            {
-                                "srsDimension": "1"
-                            },
-                            {
-                                "uomLabels": "m"
-                            }
-                        ],
-                        "elevationMeasurementMethod": [
-                            {
-                                "href": "http://id.eaufrance.fr/nsa/892#XXX"
-                            },
-                            {
-                                "title": "DGPS as Dummy"
-                            }
-                        ],
-                        "elevationType": [
-                            {
-                                "href": "http://resource.europe-geology.eu/vocabs/elevationtype/groundSurface"
-                            },
-                            {
-                                "title": "Ground surface"
-                            }
-                        ]
-                    }
-                },
-                "sampledFeature": [
-                    {
-                        "href": "https://sweet.jpl.nasa.gov/2.3/realmEarthReference.owl#EarthLithosphere"
-                    },
-                    {
-                        "title": "Lithosphere"
-                    }
-                ],
-                "startPoint": [
-                    {
-                        "href": "http://resource.europe-geology.eu/vocabs/StartPoint/naturalLandSurface"
-                    },
-                    {
-                        "title": "naturalLandSurface"
-                    }
-                ],
-                "status": [
-                    {
-                        "href": "http://id.eaufrance.fr/nsa/146#XXX"
-                    },
-                    {
-                        "title": "Opérationnel"
-                    }
-                ],
-                "type": [
-                    {
-                        "href": "http://vocabulary.odm2.org/samplingfeaturetype/borehole/"
-                    },
-                    {
-                        "title": "borehole"
-                    }
-                ]
-            },
-            "type": "Feature"
-        }
-    ],
-    "links": [
-        {
-            "href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=application%2Fvnd.google-earth.kml%2Bxml",
-            "rel": "alternate",
-            "title": "This document as application/vnd.google-earth.kml+xml",
-            "type": "application/vnd.google-earth.kml+xml"
-        },
-        {
-            "href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=application%2Fvnd.google-earth.kml%20xml",
-            "rel": "alternate",
-            "title": "This document as application/vnd.google-earth.kml xml",
-            "type": "application/vnd.google-earth.kml xml"
-        },
-        {
-            "href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=text%2Fxml%3B%20subtype%3Dgml%2F2.1.2",
-            "rel": "alternate",
-            "title": "This document as text/xml; subtype=gml/2.1.2",
-            "type": "text/xml; subtype=gml/2.1.2"
-        },
-        {
-            "href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=text%2Fxml%3B%20subtype%3Dgml%2F3.1.1",
-            "rel": "alternate",
-            "title": "This document as text/xml; subtype=gml/3.1.1",
-            "type": "text/xml; subtype=gml/3.1.1"
-        },
-        {
-            "href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=application%2Fgml%2Bxml%3B%20version%3D3.2",
-            "rel": "alternate",
-            "title": "This document as application/gml+xml; version=3.2",
-            "type": "application/gml+xml; version=3.2"
-        },
-        {
-            "href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=text%2Fxml%3B%20subtype%3Dgml%2F3.2",
-            "rel": "alternate",
-            "title": "This document as text/xml; subtype=gml/3.2",
-            "type": "text/xml; subtype=gml/3.2"
-        },
-        {
-            "href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=application%2Fjson",
-            "rel": "alternate",
-            "title": "This document as application/json",
-            "type": "application/json"
-        },
-        {
-            "href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=application%2Fgeo%2Bjson",
-            "rel": "self",
-            "title": "This document",
-            "type": "application/geo+json"
-        },
-        {
-            "href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=text%2Fhtml",
-            "rel": "alternate",
-            "title": "This document as text/html",
-            "type": "text/html"
-        },
-        {
-            "href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=application%2Fgml%2Bxml%3Bversion%3D3.2%3Bprofile%3Dhttp%3A%2F%2Fwww.opengis.net%2Fdef%2Fprofile%2Fogc%2F2.0%2Fgml-sf0",
-            "rel": "alternate",
-            "title": "This document as application/gml+xml;version=3.2;profile=http://www.opengis.net/def/profile/ogc/2.0/gml-sf0",
-            "type": "application/gml+xml;version=3.2;profile=http://www.opengis.net/def/profile/ogc/2.0/gml-sf0"
-        },
-        {
-            "href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=application%2Fvnd.mapbox-vector-tile",
-            "rel": "alternate",
-            "title": "This document as application/vnd.mapbox-vector-tile",
-            "type": "application/vnd.mapbox-vector-tile"
-        },
-        {
-            "href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=application%2Fx-protobuf%3Btype%3Dmapbox-vector",
-            "rel": "alternate",
-            "title": "This document as application/x-protobuf;type=mapbox-vector",
-            "type": "application/x-protobuf;type=mapbox-vector"
-        },
-        {
-            "href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole?f=application%2Fjson",
-            "rel": "collection",
-            "title": "The collection description as application/json",
-            "type": "application/json"
-        },
-        {
-            "href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole?f=application%2Fx-yaml",
-            "rel": "collection",
-            "title": "The collection description as application/x-yaml",
-            "type": "application/x-yaml"
-        },
-        {
-            "href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole?f=application%2Fxml",
-            "rel": "collection",
-            "title": "The collection description as application/xml",
-            "type": "application/xml"
-        },
-        {
-            "href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole?f=text%2Fhtml",
-            "rel": "collection",
-            "title": "The collection description as text/html",
-            "type": "text/html"
-        }
-    ],
-    "numberReturned": 5,
-    "timeStamp": "2019-02-08T10:30:31.997Z",
-    "type": "FeatureCollection"
+				"elevationType": {
+					"@href": "http://resource.europe-geology.eu/vocabs/elevationtype/groundSurface",
+					"@title": "Ground surface"
+				}
+			},
+			"startPoint": {
+				"@href": "http://resource.europe-geology.eu/vocabs/StartPoint/naturalLandSurface",
+				"@title": "naturalLandSurface"
+			},
+			"status": {
+				"@href": "http://id.eaufrance.fr/nsa/146#XXX",
+				"@title": "Opérationnel"
+			},
+			"boreCollarPositionalAccuracy": {
+				"@uom": "http://qudt.org/vocab/unit/CM"
+			},
+			"locationMeasurementMethod": {
+				"@href": "http://id.eaufrance.fr/nsa/917#XXX",
+				"@title": "DGPS as Dummy"
+			},
+			"accessibleDepth": {
+				"dataType": "AccessibleDepth",
+				"depthObservationTime": {
+					"dataType": "TimeInstant",
+					"timePosition": "2007-05-20T22:00:00Z"
+				}
+			},
+			"lifeCycleInfo": {
+				"dataType": "LifeCycleInfo",
+				"updateDate": {
+					"dataType": "TimeInstant",
+					"timePosition": "2015-06-15T14:59:45Z"
+				},
+				"status": {
+					"@href": "http://id.eaufrance.fr/nsa/390#XXX",
+					"@title": "Validé"
+				},
+				"creationDate": {
+					"dataType": "TimeInstant",
+					"timePosition": "2007-05-20T22:00:00Z"
+				}
+			},
+			"locatedOnAdminUnit": {
+				"@href": "6262774",
+				"@title": "SANGATTE"
+			},
+			"bholeHeadworks": [{
+				"type": "Feature",
+				"geometry": {
+					"type": "Point",
+					"coordinates": [51.0684, 1.4298]
+				},
+				"properties": {
+					"featureType": "BoreCollar",
+					"collarElevation": {
+						"value": -32,
+						"@srsName": "http://www.opengis.net/def/crs/EPSG/0/5720",
+						"@srsDimension": "1",
+						"@uomLabels": "m"
+					}
+				}
+			}]
+		}
+	}]
 }
