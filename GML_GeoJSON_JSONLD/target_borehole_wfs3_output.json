@@ -1,5 +1,6 @@
 {
 	"crs": null,
+	"type": "FeatureCollection",
 	"features": [{
 		"id": "https://data.geoscience.fr/id/well/BSS000AAAA",
 		"type": "Feature",
