@@ -1,0 +1,163 @@
+{
+	 "@context": {
+    "geojson": "https://purl.org/geojson/vocab#",
+    "gsp": "http://www.opengis.net/ont/geosparql#",
+    "geom": "http://data.ign.fr/def/geometrie#",
+	"sam": "http://def.seegrid.csiro.au/ontology/om/sam-lite#",
+	"om": "http://def.seegrid.csiro.au/ontology/om/om-lite#",
+	"eposb": "https://forge.brgm.fr/svnrepository/epos/trunk/schemas/eposb#",
+	"ci": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#",
+	"md": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/metadata#",
+	"time": "http://www.w3.org/2006/time#",
+	"gml": "http://www.opengis.net/gml/3.2#",
+	"gwmlwc": "http://www.opengis.net/gwml-wellconstruction/2.2",
+	"schema": "https://schema.org/",
+    "Feature": "gsp:Feature",
+    "FeatureCollection": "geojson:FeatureCollection", \\todo
+    "GeometryCollection": "geom:GeometryCollection",
+    "Geometry": "geom:Geometry",
+    "LineString": "geom:LineString",
+    "MultiLineString": "geom:MultiLineString",
+    "MultiPoint": "geom:MultiPoint",
+    "MultiPolygon": "geom:MultiPolygon",
+    "Point": "geom:Point",
+    "Polygon": "geom:Polygon",
+    "bbox": "geom:envelope",
+	"wkt": "gsp:asWKT",
+    "features": {\\todo
+      "@container": "@set",
+      "@id": "geojson:features"
+    },
+    "geometry": "geom:geometry",
+    "description": "http://purl.org/dc/terms/description",
+    "title": "http://purl.org/dc/terms/title",
+	"name":"schema:name"
+    },
+   
+	"type": "FeatureCollection",\\todo
+    "features": [\\todo
+        {
+		"@id": "https://data.geoscience.fr/id/well/BSS000AAAA",
+		"@type": ["Feature","eposb:Borehole","http://vocabulary.odm2.org/samplingfeaturetype/borehole"],
+		"geometry": {
+			"@type": "Point",
+			"wkt": "POINT(1.4298 51.0684)"
+			},
+		
+		"sam:sampledFeature":"https://sweet.jpl.nasa.gov/2.3/realmEarthReference.owl#EarthLithosphere",
+		"eposb:custodian": [{
+			"@type": "eposb:Custodian",
+			"eposb:custodian": {
+				"@type": "ci:ResponsibleParty",
+				"ci:organisationName": "BRGM",
+				"ci:role": {
+					"@type": "ci:RoleCode",
+					"@id": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/code/Role/custodian"
+				}
+			},
+			"eposb:custodianPeriod": {
+				"@type": "time:Period",
+				"time:hasBeginning": {"time:inXSDDateTime":"2015-06-15T14:59:45Z"},
+				"time:hasEnd": {"time:inXSDDateTime":"2017-06-15T14:59:45Z"}
+			}
+		}],
+		"eposb:legalAccessLevel": {
+			"@type": "md:LegalConstraints",
+			"md:accessConstraints": {
+				"@type": "md:RestrictionCode",
+				"@id": "openaccess" \\todo
+			},
+			"md:Constraints": {
+				"@type": "md:RestrictionCode",
+				"@id": "openaccess" \\todo
+			}
+		},
+		"eposb:length": {
+			"@type":"om:SimpleMeasure",
+			"om:amount": 82,
+			"om:uom": "http://qudt.org/vocab/unit/M"
+		},
+		"eposb:perator": {
+			"@type": "eposb:Operator",
+			"eposb:operator": {
+				"@type": "ci:ResponsibleParty",
+				"ci:organisationName": "BRGM",
+				"ci:role": {
+					"@type": "ci:RoleCode",
+					"@id": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/code/Role/owner"
+				}
+			}
+		},
+		"eposb:referenceElevation": {
+			"@type": "eposb:Elevation",
+			"eposb:elevation": -32,
+			"geom:crs":{
+				"http://www.opengis.net/def/crs/EPSG/0/5720",
+				"@srsDimension": "1"},
+			"om:uom": "http://qudt.org/vocab/unit/M"
+			"eposb:elevationMeasurementMethod": {
+				"@id": "http://id.eaufrance.fr/nsa/892#XXX",
+				"name": "DGPS as Dummy"
+			},
+			"eposb:elevationType": {
+				"@id": "https://data.geoscience.earth/ncl/ElevationType/groundSurface",
+				"name": "Ground surface"
+			}
+		},
+		"eposb:startPoint": {
+			"@id": "https://data.geoscience.earth/ncl/StartPoint/naturalLandSurface",
+			"name": "natural land surface"
+		},
+		"eposb:status": {
+			"@id": "http://id.eaufrance.fr/nsa/146#XXX",
+			"name": "Opérationnel"
+		},
+		"eposb:boreCollarPositionalAccuracy": {
+			"om:uom": "http://qudt.org/vocab/unit/CM"
+		},
+		"eposb:locationMeasurementMethod": {
+			"@id": "http://id.eaufrance.fr/nsa/917#XXX",
+			"name": "DGPS as Dummy"
+		},
+		"eposb:accessibleDepth": {
+			"@type": "eposb:AccessibleDepth",
+			"eposb:depthObservationTime": {
+				"@type": "time:Instant",
+				"time:inXSDDateTime": "2007-05-20T22:00:00Z"
+			}
+		},
+		"eposb:lifeCycleInfo": {
+			"@type": "LifeCycleInfo",
+			"eposb:updateDate": {
+				"@type": "time:Instant",
+				"time:inXSDDateTime": "2015-06-15T14:59:45Z"
+			},
+			"status": {
+				"@id": "http://id.eaufrance.fr/nsa/390#XXX",
+				"name": "Validé"
+			},
+			"eposb:creationDate": {
+				"@type": "time:Instant",
+				"time:inXSDDateTime": "2007-05-20T22:00:00Z"
+			}
+		},
+		"eposb:locatedOnAdminUnit": {\\todo
+			"@id": "6262774",
+			"name": "SANGATTE"
+		},
+		"bholeHeadworks": [
+			{
+			"@type": ["gwmlwc:BoreCollar","Feature"],
+			"gwmlwc:collarElevation": {
+				"om:amount": -32,
+				"geom:crs": "http://www.opengis.net/def/crs/EPSG/0/5720",
+				"om:uom": "http://qudt.org/vocab/unit/M"
+			},
+			"geom:geometry": {
+				"@type": "geom:Point",
+				"wkt": "POINT(1.4298 51.0684)"
+			}
+			}
+		}]
+	}]
+}
