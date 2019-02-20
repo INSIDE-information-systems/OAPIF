@@ -1,41 +1,40 @@
 {
-	 "@context": {
-    "geojson": "https://purl.org/geojson/vocab#",
-    "gsp": "http://www.opengis.net/ont/geosparql#",
-    "geom": "http://data.ign.fr/def/geometrie#",
-	"sam": "http://def.seegrid.csiro.au/ontology/om/sam-lite#",
-	"om": "http://def.seegrid.csiro.au/ontology/om/om-lite#",
-	"eposb": "https://forge.brgm.fr/svnrepository/epos/trunk/schemas/eposb#",
-	"ci": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#",
-	"md": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/metadata#",
-	"time": "http://www.w3.org/2006/time#",
-	"gml": "http://www.opengis.net/gml/3.2#",
-	"gwmlwc": "http://www.opengis.net/gwml-wellconstruction/2.2",
-	"schema": "https://schema.org/",
-    "Feature": "gsp:Feature",
-    "FeatureCollection": "geojson:FeatureCollection", \\todo
-    "GeometryCollection": "geom:GeometryCollection",
-    "Geometry": "geom:Geometry",
-    "LineString": "geom:LineString",
-    "MultiLineString": "geom:MultiLineString",
-    "MultiPoint": "geom:MultiPoint",
-    "MultiPolygon": "geom:MultiPolygon",
-    "Point": "geom:Point",
-    "Polygon": "geom:Polygon",
-    "bbox": "geom:envelope",
-	"wkt": "gsp:asWKT",
-    "features": {\\todo
-      "@container": "@set",
-      "@id": "geojson:features"
-    },
-    "geometry": "geom:geometry",
-    "description": "http://purl.org/dc/terms/description",
-    "title": "http://purl.org/dc/terms/title",
-	"name":"schema:name"
+	"@context": {
+		"gsp": "http://www.opengis.net/ont/geosparql#",
+		"geom": "http://data.ign.fr/def/geometrie#",
+		"sam": "http://def.seegrid.csiro.au/ontology/om/sam-lite#",
+		"om": "http://def.seegrid.csiro.au/ontology/om/om-lite#",
+		"eposb": "https://forge.brgm.fr/svnrepository/epos/trunk/schemas/eposb#",
+		"ci": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#",
+		"md": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/metadata#",
+		"time": "http://www.w3.org/2006/time#",
+		"gml": "http://www.opengis.net/gml/3.2#",
+		"gwmlwc": "http://www.opengis.net/gwml-wellconstruction/2.2",
+		"schema": "https://schema.org/",
+		"Feature": "gsp:Feature",
+		"FeatureCollection": "schema:Collection", 
+		"GeometryCollection": "geom:GeometryCollection",
+		"Geometry": "geom:Geometry",
+		"LineString": "geom:LineString",
+		"MultiLineString": "geom:MultiLineString",
+		"MultiPoint": "geom:MultiPoint",
+		"MultiPolygon": "geom:MultiPolygon",
+		"Point": "geom:Point",
+		"Polygon": "geom:Polygon",
+		"bbox": "geom:envelope",
+		"wkt": "gsp:asWKT",
+		"features": {
+		  "@container": "@set",
+		  "@id": "schema:hasPart"
+		},
+		"geometry": "geom:geometry",
+		"description": "http://purl.org/dc/terms/description",
+		"title": "http://purl.org/dc/terms/title",
+		"name":"schema:name"
     },
    
-	"type": "FeatureCollection",\\todo
-    "features": [\\todo
+	"type": "FeatureCollection",
+    "features": [
         {
 		"@id": "https://data.geoscience.fr/id/well/BSS000AAAA",
 		"@type": ["Feature","eposb:Borehole","http://vocabulary.odm2.org/samplingfeaturetype/borehole"],
