@@ -43,7 +43,10 @@
 			"wkt": "POINT(1.4298 51.0684)"
 			},
 		
-		"sam:sampledFeature":"https://sweet.jpl.nasa.gov/2.3/realmEarthReference.owl#EarthLithosphere",
+		"sam:sampledFeature":{
+			"@id":"https://sweet.jpl.nasa.gov/2.3/realmEarthReference.owl#EarthLithosphere",
+			"name":"Lithosphere"
+			},
 		"eposb:custodian": [{
 			"@type": "eposb:Custodian",
 			"eposb:custodian": {
@@ -90,10 +93,8 @@
 		"eposb:referenceElevation": {
 			"@type": "eposb:Elevation",
 			"eposb:elevation": -32,
-			"geom:crs":{
-				"http://www.opengis.net/def/crs/EPSG/0/5720",
-				"@srsDimension": "1"},
-			"om:uom": "http://qudt.org/vocab/unit/M"
+			"geom:crs":"http://www.opengis.net/def/crs/EPSG/0/5720",
+			"om:uom": "http://qudt.org/vocab/unit/M",
 			"eposb:elevationMeasurementMethod": {
 				"@id": "http://id.eaufrance.fr/nsa/892#XXX",
 				"name": "DGPS as Dummy"
@@ -155,7 +156,6 @@
 			"geom:geometry": {
 				"@type": "geom:Point",
 				"wkt": "POINT(1.4298 51.0684)"
-			}
 			}
 		}]
 	}]
