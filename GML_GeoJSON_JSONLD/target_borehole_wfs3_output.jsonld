@@ -4,7 +4,7 @@
 		"geom": "http://data.ign.fr/def/geometrie#",
 		"sam": "http://def.seegrid.csiro.au/ontology/om/sam-lite#",
 		"om": "http://def.seegrid.csiro.au/ontology/om/om-lite#",
-		"eposb": "https://forge.brgm.fr/svnrepository/epos/trunk/schemas/eposb#",
+		"eposb": "https://data.geoscience.earth/def/eposb#",
 		"ci": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#",
 		"md": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/metadata#",
 		"time": "http://www.w3.org/2006/time#",
@@ -38,6 +38,7 @@
         {
 		"@id": "https://data.geoscience.fr/id/well/BSS000AAAA",
 		"@type": ["Feature","eposb:Borehole","http://vocabulary.odm2.org/samplingfeaturetype/borehole"],
+		"name":"when available",
 		"geometry": {
 			"@type": "Point",
 			"wkt": "POINT(1.4298 51.0684)"
@@ -67,11 +68,11 @@
 			"@type": "md:LegalConstraints",
 			"md:accessConstraints": {
 				"@type": "md:RestrictionCode",
-				"@id": "openaccess" \\todo
+				"@id": "http://purl.org/eprint/accessRights/openAccess"
 			},
 			"md:Constraints": {
 				"@type": "md:RestrictionCode",
-				"@id": "openaccess" \\todo
+				"@id": "http://purl.org/eprint/accessRights/openAccess"
 			}
 		},
 		"eposb:length": {
@@ -141,8 +142,8 @@
 				"time:inXSDDateTime": "2007-05-20T22:00:00Z"
 			}
 		},
-		"eposb:locatedOnAdminUnit": {\\todo
-			"@id": "6262774",
+		"eposb:locatedOnAdminUnit": {
+			"@id": "http://id.insee.fr/geo/commune/62774",
 			"name": "SANGATTE"
 		},
 		"bholeHeadworks": [

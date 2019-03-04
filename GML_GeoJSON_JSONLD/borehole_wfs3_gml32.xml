@@ -79,7 +79,7 @@
           </eposb:creationDate>
         </eposb:LifeCycleInfo>
       </eposb:lifeCycleInfo>
-      <eposb:locatedOnAdminUnit xlink:href="6262774" xlink:title="SANGATTE"/>
+      <eposb:locatedOnAdminUnit xlink:href="http://id.insee.fr/geo/commune/62774" xlink:title="SANGATTE"/>
       <eposb:bholeHeadworks>
         <gwml-wellconstruction:BoreCollar>
           <gml:boundedBy>
@@ -120,10 +120,10 @@
       <eposb:legalAccessLevel>
         <gmd:MD_LegalConstraints>
           <gmd:accessConstraints>
-            <gmd:MD_RestrictionCode codeList="" codeListValue="openaccess"/>
+            <gmd:MD_RestrictionCode codeList="http://purl.org/eprint/accessRights/" codeListValue="openAccess"/>
           </gmd:accessConstraints>
           <gmd:useConstraints>
-            <gmd:MD_RestrictionCode codeList="" codeListValue="openaccess"/>
+            <gmd:MD_RestrictionCode codeList="http://purl.org/eprint/accessRights/" codeListValue="openAccess"/>
           </gmd:useConstraints>
         </gmd:MD_LegalConstraints>
       </eposb:legalAccessLevel>

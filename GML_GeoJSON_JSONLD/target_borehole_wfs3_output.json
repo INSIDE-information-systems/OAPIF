@@ -1,12 +1,11 @@
 {
-	"crs": null,
 	"type": "FeatureCollection",
 	"features": [{
 		"id": "https://data.geoscience.fr/id/well/BSS000AAAA",
 		"type": "Feature",
 		"geometry": {
 			"type": "Point",
-			"coordinates": [51.0684, 1.4298]
+			"coordinates": [1.4298, 51.0684]
 		},
 		"properties": {
 			"featureType": "Borehole",
@@ -14,6 +13,7 @@
 				"@href": "http://vocabulary.odm2.org/samplingfeaturetype/borehole/",
 				"@title": "borehole"
 			},
+			"name":"when available",
 			"sampledFeature": {
 				"@href": "https://sweet.jpl.nasa.gov/2.3/realmEarthReference.owl#EarthLithosphere",
 				"@title": "Lithosphere"
@@ -39,13 +39,13 @@
 				"featureType": "MD_LegalConstraints",
 				"accessConstraints": {
 					"dataType": "MD_RestrictionCode",
-					"@codeList": "",
-					"@codeListValue": "openaccess"
+					"@codeList": "http://purl.org/eprint/accessRights/",
+					"@codeListValue": "openAccess"
 				},
 				"useConstraints": {
 					"dataType": "MD_RestrictionCode",
-					"@codeListValue": "openaccess",
-					"@codeList": ""
+					"@codeList": "http://purl.org/eprint/accessRights/",
+					"@codeListValue": "openAccess"
 				}
 			},
 			"length": {
@@ -121,14 +121,14 @@
 				}
 			},
 			"locatedOnAdminUnit": {
-				"@href": "6262774",
+				"@href": "http://id.insee.fr/geo/commune/62774",
 				"@title": "SANGATTE"
 			},
 			"bholeHeadworks": [{
 				"type": "Feature",
 				"geometry": {
 					"type": "Point",
-					"coordinates": [51.0684, 1.4298]
+					"coordinates": [1.4298, 51.0684]
 				},
 				"properties": {
 					"featureType": "BoreCollar",
