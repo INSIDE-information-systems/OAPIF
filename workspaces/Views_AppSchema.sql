@@ -156,3 +156,17 @@ UNION
      LEFT JOIN app_diffussion_wfs3.bss_ouvrage_etat_physique eph ON dos.indice::text = eph.indice::text
   WHERE NOT eph.indice IS NULL AND NOT eph.date_debut IS NULL;
 		
+CREATE MATERIALIZED VIEW app_diffussion_wfs3.ks_pe_sh_mv
+TABLESPACE pg_default
+AS SELECT dos.indice,
+    fac.date_debut,
+    fac.date_fin,
+    fac.code_station,
+        CASE
+            WHEN fac.date_fin IS NULL THEN 'unknown'::text
+            ELSE NULL::text
+        END AS date_fin_unknown
+   FROM app_diffussion_wfs3.bss_dossier_mv dos
+     JOIN app_diffussion_wfs3.bsseau_pe_sh fac ON dos.indice::text = fac.indice::text
+;
+														
