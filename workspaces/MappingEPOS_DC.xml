@@ -411,6 +411,43 @@ www.datacove.eu
 	
 		<FeatureTypeMapping>
 			<sourceDataStore>EPOS</sourceDataStore>	 
+			<sourceType>ks_pe_sh_mv</sourceType> 
+			<targetElement>eposb:BoreholeMonitoringFacility</targetElement>	
+			<attributeMappings>
+				<AttributeMapping>
+					<targetAttribute>FEATURE_LINK</targetAttribute>
+					<sourceExpression>
+						<OCQL>indice</OCQL>
+					</sourceExpression>
+				</AttributeMapping>			
+				<AttributeMapping>
+					<targetAttribute>eposb:linkingTime/gml:TimePeriod</targetAttribute>
+					<idExpression>
+						<OCQL>strconcat('mf.gml.point.',if_then_else(isNull(indice),'XXX',indice))</OCQL>
+					</idExpression>				
+				</AttributeMapping>	
+				<AttributeMapping>
+					<targetAttribute>eposb:linkingTime/gml:TimePeriod/gml:beginPosition</targetAttribute>
+					<sourceExpression>
+						<OCQL>date_debut</OCQL>
+					</sourceExpression>
+				</AttributeMapping>					
+				<AttributeMapping>
+				    <targetAttribute>eposb:linkingTime/gml:TimePeriod/gml:endPosition</targetAttribute>
+				    <sourceExpression>
+					<OCQL>date_fin</OCQL>
+				    </sourceExpression>
+				    <encodeIfEmpty>true</encodeIfEmpty>
+				    <ClientProperty>
+					<name>indeterminatePosition</name>
+					<value>date_fin_unknown</value>
+				    </ClientProperty>
+				</AttributeMapping>
+			</attributeMappings>
+		</FeatureTypeMapping> 					
+			
+		<FeatureTypeMapping>
+			<sourceDataStore>EPOS</sourceDataStore>	 
 			<sourceType>ks_borehole_mv</sourceType> 
 			<targetElement>eposb:Borehole</targetElement>	
 			<attributeMappings>
@@ -758,25 +795,13 @@ www.datacove.eu
 				</AttributeMapping>		
 
 				<AttributeMapping>
-					<targetAttribute>eposb:monitoringFacility/eposb:BoreholeMonitoringFacility/eposb:linkingTime/gml:TimePeriod</targetAttribute>
-					<idExpression>
-						<OCQL>strconcat('mf.gml.point.',if_then_else(isNull(bss_id),'XXX',bss_id))</OCQL>
-					</idExpression>				
-				</AttributeMapping>	
-				
-				<AttributeMapping>
-					<targetAttribute>eposb:monitoringFacility/eposb:BoreholeMonitoringFacility/eposb:linkingTime/gml:TimePeriod/gml:beginPosition</targetAttribute>
+					<targetAttribute>eposb:monitoringFacility/eposb:BoreholeMonitoringFacility</targetAttribute>
 					<sourceExpression>
-						<OCQL>date_debut</OCQL>
+						<OCQL>indice</OCQL>
+						<linkElement>eposb:BoreholeMonitoringFacility</linkElement> 
+						<linkField>FEATURE_LINK</linkField>
 					</sourceExpression>
-				</AttributeMapping>					
-				
-				<AttributeMapping>
-					<targetAttribute>eposb:monitoringFacility/eposb:BoreholeMonitoringFacility/eposb:linkingTime/gml:TimePeriod/gml:endPosition</targetAttribute>
-					<sourceExpression>
-						<OCQL>date_fin</OCQL>
-					</sourceExpression>
-				</AttributeMapping>		
+				</AttributeMapping>
 
 				<AttributeMapping>
 					<targetAttribute>eposb:alias</targetAttribute>
