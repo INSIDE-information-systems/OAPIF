@@ -449,7 +449,8 @@ www.datacove.eu
 		<FeatureTypeMapping>
 			<sourceDataStore>EPOS</sourceDataStore>	 
 			<sourceType>ks_borehole_mv</sourceType> 
-			<targetElement>eposb:Borehole</targetElement>	
+			<targetElement>eposb:Borehole</targetElement>
+			<defaultGeometry>eposb:bholeHeadworks/gwml-wellconstruction:BoreCollar/gwml-wellconstruction:collarLocation</defaultGeometry>			
 			<attributeMappings>
 			
 				<AttributeMapping>
