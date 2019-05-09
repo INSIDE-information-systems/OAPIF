@@ -685,7 +685,6 @@ www.datacove.eu
 					<sourceExpression>
 						<OCQL>prec_xy</OCQL>
 					</sourceExpression>					
-					<encodeIfEmpty>true</encodeIfEmpty>
 					<ClientProperty>
 						<name>uom</name>
 						<value>'http://qudt.org/vocab/unit/CM'</value>
