@@ -11,10 +11,11 @@ AS
      LEFT JOIN app_diffussion_wfs3.bss_dossier_mv dos ON ali.indice::text = dos.indice::text;
 
 --- changed!!!!!!!
--- Note: I've constrained this view by WHERE NOT ouv.libelle IS NULL AND NOT dep.profondeur_accessible IS NULL, in order to get semi-sane data!!! In reality, we need more values in the DB, then can remove
+-- removed the join with facility, as this is now done via feature chaining and the view ks_pe_sh_mv
+-- OLD Note: I've constrained this view by WHERE NOT ouv.libelle IS NULL AND NOT dep.profondeur_accessible IS NULL, in order to get semi-sane data!!! In reality, we need more values in the DB, then can remove
+drop MATERIALIZED VIEW app_diffussion_wfs3.ks_borehole_mv
 CREATE MATERIALIZED VIEW app_diffussion_wfs3.ks_borehole_mv
-AS
- SELECT dos.indice,
+AS SELECT dos.indice,
     dos.bss_id,
     ouv.libelle,
     len.profondeur_investigation,
@@ -36,10 +37,7 @@ AS
     com.num_departement,
     ouv.latitude,
     ouv.longitude,
-    st_pointfromtext(((('POINT('::text || ouv.latitude) || ' '::text) || ouv.longitude) || ')'::text, 4326) AS loc,
-	null AS date_debut, --fac.date_debut,
-    null AS date_fin, --fac.date_fin,
-    null AS code_station --fac.code_station
+    st_pointfromtext(((('POINT('::text || ouv.latitude) || ' '::text) || ouv.longitude) || ')'::text, 4326) AS loc
    FROM app_diffussion_wfs3.bss_dossier_mv dos
      LEFT JOIN app_diffussion_wfs3.bss_ouvrage_mv ouv ON dos.indice::text = ouv.indice::text
      LEFT JOIN ( SELECT bss_profondeur_investigation.indice,
@@ -61,10 +59,8 @@ AS
      LEFT JOIN app_diffussion_wfs3.referentiel_interne_lex_mode_obtention_z_mv elmes ON ouv.code_mode_obtention_z = elmes.code
      LEFT JOIN app_diffussion_wfs3.bss_profondeur_accessible dep ON dos.indice::text = dep.indice::text
      LEFT JOIN app_diffussion_wfs3.bsseau_point_eau pteau ON dos.indice::text = pteau.indice::text
-     LEFT JOIN app_diffussion_wfs3.referentiel_interne_lex_communes com ON dos.num_commune::text = com.num_commune::text AND dos.num_departement::text = com.num_departement::text
-     -- LEFT JOIN app_diffussion_wfs3.bsseau_pe_sh fac ON dos.indice::text = fac.indice::text
-  --WHERE NOT ouv.libelle IS NULL AND NOT dep.profondeur_accessible IS NULL
- LIMIT 1000;
+     LEFT JOIN app_diffussion_wfs3.referentiel_interne_lex_communes com ON dos.num_commune::text = com.num_commune::text AND dos.num_departement::text = com.num_departement::text;
+     
  
 		
 CREATE MATERIALIZED VIEW app_diffussion_wfs3.ks_borehole_use_mv
