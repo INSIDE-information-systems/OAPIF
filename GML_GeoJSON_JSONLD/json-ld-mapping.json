@@ -127,7 +127,7 @@
       },
       "eposb:status": {
         "@id": "${epsdb:status/xlink:href}",
-        "name": "Opérationnel"
+        "name": "OpÃ©rationnel"
       },
       "eposb:boreCollarPositionalAccuracy": {
         "om:uom": "http://qudt.org/vocab/unit/CM"
@@ -152,7 +152,7 @@
         },
         "status": {
           "@id": "${eposb:lifeCycleInfo/eposb:LifeCycleInfo/eposb:status}",
-          "name": "Validé"
+          "name": "ValidÃ©"
         },
         "eposb:creationDate": {
           "@type": "time:Instant",
