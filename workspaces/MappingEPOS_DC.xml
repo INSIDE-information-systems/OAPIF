@@ -573,6 +573,7 @@ www.datacove.eu
 					<sourceExpression>
 						<OCQL>profondeur_investigation</OCQL>
 					</sourceExpression>
+					<encodeIfEmpty>false</encodeIfEmpty>
 					<ClientProperty>
 						<name>uom</name>
 						<value>'http://qudt.org/vocab/unit/M'</value>
@@ -684,7 +685,8 @@ www.datacove.eu
 					<targetAttribute>eposb:boreCollarPositionalAccuracy</targetAttribute>
 					<sourceExpression>
 						<OCQL>prec_xy</OCQL>
-					</sourceExpression>					
+					</sourceExpression>
+					<encodeIfEmpty>false</encodeIfEmpty>
 					<ClientProperty>
 						<name>uom</name>
 						<value>'http://qudt.org/vocab/unit/CM'</value>
