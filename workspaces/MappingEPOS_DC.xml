@@ -570,10 +570,10 @@ www.datacove.eu
 
 				<AttributeMapping>
 					<targetAttribute>eposb:length</targetAttribute>
+					<encodeIfEmpty>false</encodeIfEmpty>
 					<sourceExpression>
 						<OCQL>profondeur_investigation</OCQL>
 					</sourceExpression>
-					<encodeIfEmpty>false</encodeIfEmpty>
 					<ClientProperty>
 						<name>uom</name>
 						<value>'http://qudt.org/vocab/unit/M'</value>
@@ -683,10 +683,10 @@ www.datacove.eu
 
 				<AttributeMapping>
 					<targetAttribute>eposb:boreCollarPositionalAccuracy</targetAttribute>
+					<encodeIfEmpty>false</encodeIfEmpty>
 					<sourceExpression>
 						<OCQL>prec_xy</OCQL>
 					</sourceExpression>
-					<encodeIfEmpty>false</encodeIfEmpty>
 					<ClientProperty>
 						<name>uom</name>
 						<value>'http://qudt.org/vocab/unit/CM'</value>
