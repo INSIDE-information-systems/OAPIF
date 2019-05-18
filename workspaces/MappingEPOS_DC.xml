@@ -797,7 +797,7 @@ www.datacove.eu
 				</AttributeMapping>		
 
 				<AttributeMapping>
-					<targetAttribute>eposb:monitoringFacility/eposb:BoreholeMonitoringFacility</targetAttribute>
+					<targetAttribute>eposb:monitoringFacility</targetAttribute>
 					<sourceExpression>
 						<OCQL>indice</OCQL>
 						<linkElement>eposb:BoreholeMonitoringFacility</linkElement> 
