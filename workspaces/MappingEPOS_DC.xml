@@ -397,7 +397,7 @@
 			<sourceDataStore>EPOS</sourceDataStore>
 			<sourceType>ks_borehole_mv</sourceType>
 			<targetElement>eposb:Borehole</targetElement>
-			<defaultGeometry>sams:shape/gml:Point</defaultGeometry>
+			<defaultGeometry>sams:shape</defaultGeometry>
 			<attributeMappings>
 				<AttributeMapping>
 					<targetAttribute>eposb:Borehole</targetAttribute>
