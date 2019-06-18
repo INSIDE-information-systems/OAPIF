@@ -511,7 +511,18 @@ www.datacove.eu
 						<linkElement>om:NamedValue</linkElement>
 						<linkField>FEATURE_LINK</linkField>
 					</sourceExpression>
-				</AttributeMapping>					
+				</AttributeMapping>	
+
+				<AttributeMapping>
+					<targetAttribute>sams:shape</targetAttribute>
+					<sourceExpression>
+						<OCQL>loc</OCQL>
+					</sourceExpression>
+					<idExpression>
+<!--						<OCQL>bss_id</OCQL>  -->
+						<OCQL>strconcat('gml.point.',if_then_else(isNull(bss_id),'XXX',bss_id))</OCQL> 
+					</idExpression>				
+				</AttributeMapping>				
 				
 				<AttributeMapping>
 					<targetAttribute>eposb:boreholeUse</targetAttribute>
