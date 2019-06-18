@@ -1,68 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-GeoServer configuration brought to you courtesy of DataCove.EU
-www.datacove.eu 
--->
-<as:AppSchemaDataAccess xmlns:as="http://www.geotools.org/app-schema"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.geotools.org/app-schema ./AppSchemaDataAccess.xsd">
+<!--GeoServer configuration brought to you courtesy of DataCove.EUwww.datacove.eu -->
+<as:AppSchemaDataAccess xmlns:as="http://www.geotools.org/app-schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.geotools.org/app-schema ./AppSchemaDataAccess.xsd">
 	<namespaces>
-
 		<Namespace>
 			<prefix>eposb</prefix>
 			<uri>https://forge.brgm.fr/svnrepository/epos/trunk/schemas/eposb</uri>
-		</Namespace>	
-
+		</Namespace>
 		<Namespace>
 			<prefix>om</prefix>
 			<uri>http://www.opengis.net/om/2.0</uri>
 		</Namespace>
-		
 		<Namespace>
 			<prefix>sam</prefix>
 			<uri>http://www.opengis.net/sampling/2.0</uri>
 		</Namespace>
-		
 		<Namespace>
 			<prefix>sams</prefix>
 			<uri>http://www.opengis.net/samplingSpatial/2.0</uri>
 		</Namespace>
-		
 		<Namespace>
 			<prefix>gwml-wellconstruction</prefix>
 			<uri>http://www.opengis.net/gwml-wellconstruction/2.2</uri>
 		</Namespace>
-		
 		<Namespace>
 			<prefix>gco</prefix>
 			<uri>http://www.isotc211.org/2005/gco</uri>
 		</Namespace>
-
 		<Namespace>
 			<prefix>xlink</prefix>
 			<uri>http://www.w3.org/1999/xlink</uri>
 		</Namespace>
-
 		<Namespace>
 			<prefix>gmd</prefix>
 			<uri>http://www.isotc211.org/2005/gmd</uri>
 		</Namespace>
-
 		<Namespace>
 			<prefix>xsi</prefix>
 			<uri>http://www.w3.org/2001/XMLSchema-instance</uri>
 		</Namespace>
-
 		<Namespace>
 			<prefix>gml</prefix>
 			<uri>http://www.opengis.net/gml/3.2</uri>
 		</Namespace>
 	</namespaces>
-	<includedTypes>
-	</includedTypes>
+	<includedTypes>	</includedTypes>
 	<sourceDataStores>
-	  <DataStore>
-		  <id>EPOS</id>
+		<DataStore>
+			<id>EPOS</id>
 			<parameters>
 				<Parameter>
 					<name>dbtype</name>
@@ -93,7 +77,7 @@ www.datacove.eu
 					<value>${wfs3.passwd}</value>
 				</Parameter>
 				<Parameter>
-				    <name>Expose primary keys</name>
+					<name>Expose primary keys</name>
 					<value>true</value>
 				</Parameter>
 			</parameters>
@@ -106,20 +90,17 @@ www.datacove.eu
 		</FeatureType>
 	</targetTypes>
 	<typeMappings>
-	
-	<FeatureTypeMapping>
-		<sourceDataStore>EPOS</sourceDataStore>
-		<sourceType>ks_alias_mv</sourceType>
-		<targetElement>eposb:Alias</targetElement>
-		<attributeMappings>
-
-			<AttributeMapping>
-				<targetAttribute>FEATURE_LINK</targetAttribute>
+		<FeatureTypeMapping>
+			<sourceDataStore>EPOS</sourceDataStore>
+			<sourceType>ks_alias_mv</sourceType>
+			<targetElement>eposb:Alias</targetElement>
+			<attributeMappings>
+				<AttributeMapping>
+					<targetAttribute>FEATURE_LINK</targetAttribute>
 					<sourceExpression>
 						<OCQL>indice</OCQL>
 					</sourceExpression>
-				</AttributeMapping>	
-			
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>gml:identifier</targetAttribute>
 					<sourceExpression>
@@ -130,21 +111,18 @@ www.datacove.eu
 						<value>nom_organisme</value>
 					</ClientProperty>
 				</AttributeMapping>
-
 				<AttributeMapping>
 					<targetAttribute>gml:name</targetAttribute>
 					<sourceExpression>
 						<OCQL>nom_organisme</OCQL>
 					</sourceExpression>
-				</AttributeMapping>				
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:origin/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString</targetAttribute>
 					<sourceExpression>
 						<OCQL>nom_organisme</OCQL>
 					</sourceExpression>
-				</AttributeMapping>					
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:origin/gmd:CI_ResponsibleParty/gmd:role/gmd:CI_RoleCode</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -157,7 +135,6 @@ www.datacove.eu
 						<value>'owner'</value>
 					</ClientProperty>
 				</AttributeMapping>
-
 				<!-- guessing on the date as none in the mapping -->
 				<AttributeMapping>
 					<targetAttribute>eposb:aliasValidityPeriod/gml:TimePeriod/gml:beginPosition</targetAttribute>
@@ -165,7 +142,6 @@ www.datacove.eu
 						<OCQL>datmaj</OCQL>
 					</sourceExpression>
 				</AttributeMapping>
-
 				<AttributeMapping>
 					<targetAttribute>eposb:borehole</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -177,11 +153,9 @@ www.datacove.eu
 						<name>xlink:title</name>
 						<value>bss_id</value>
 					</ClientProperty>
-				</AttributeMapping>				
-				
+				</AttributeMapping>
 			</attributeMappings>
-		</FeatureTypeMapping>  	
-
+		</FeatureTypeMapping>
 		<FeatureTypeMapping>
 			<sourceDataStore>EPOS</sourceDataStore>
 			<sourceType>ks_georesource_mv</sourceType>
@@ -192,8 +166,7 @@ www.datacove.eu
 					<sourceExpression>
 						<OCQL>indice</OCQL>
 					</sourceExpression>
-				</AttributeMapping>	
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:georesourceType</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -201,8 +174,7 @@ www.datacove.eu
 						<name>xlink:href</name>
 						<value>'https://data.geoscience.earth/linktovocab/HydrogeologicUnit'</value>
 					</ClientProperty>
-				</AttributeMapping>					
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:associationQuality</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -211,31 +183,27 @@ www.datacove.eu
 						<value>strconcat('http://id.eaufrance.fr/nsa/607#',if_then_else(isNull(qua_code),'XXX',qua_code))</value>
 					</ClientProperty>
 				</AttributeMapping>
-
 				<AttributeMapping>
 					<targetAttribute>eposb:associationMethod</targetAttribute>
-					<encodeIfEmpty>true</encodeIfEmpty>
 					<isMultiple>true</isMultiple>
+					<encodeIfEmpty>true</encodeIfEmpty>
 					<ClientProperty>
 						<name>xlink:href</name>
 						<value>strconcat('http://id.eaufrance.fr/nsa/607#',if_then_else(isNull(met_code),'XXX',met_code))</value>
 					</ClientProperty>
-				</AttributeMapping>					
-				
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:associationTime/gml:TimePeriod</targetAttribute>
 					<idExpression>
 						<OCQL>strconcat('TimePeriod.',indice)</OCQL>
 					</idExpression>
-				</AttributeMapping>			
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:associationTime/gml:TimePeriod/gml:beginPosition</targetAttribute>
 					<sourceExpression>
 						<OCQL>date_debut</OCQL>
 					</sourceExpression>
-				</AttributeMapping>			
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:associationEndDepth</targetAttribute>
 					<sourceExpression>
@@ -245,8 +213,7 @@ www.datacove.eu
 						<name>uom</name>
 						<value>'http://qudt.org/vocab/unit/M'</value>
 					</ClientProperty>
-				</AttributeMapping>	
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:associationBeginDepth</targetAttribute>
 					<sourceExpression>
@@ -256,15 +223,13 @@ www.datacove.eu
 						<name>uom</name>
 						<value>'http://qudt.org/vocab/unit/M'</value>
 					</ClientProperty>
-				</AttributeMapping>	
-				
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:mainGeoresource</targetAttribute>
 					<sourceExpression>
 						<OCQL>entite_captee</OCQL>
 					</sourceExpression>
-				</AttributeMapping>		
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:georesourceFeature</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -275,12 +240,10 @@ www.datacove.eu
 					<ClientProperty>
 						<name>xlink:title</name>
 						<value>nom_entite</value>
-					</ClientProperty>				
-				</AttributeMapping>					
-				
+					</ClientProperty>
+				</AttributeMapping>
 			</attributeMappings>
-		</FeatureTypeMapping> 	
-		
+		</FeatureTypeMapping>
 		<FeatureTypeMapping>
 			<sourceDataStore>EPOS</sourceDataStore>
 			<sourceType>ks_borehole_use_mv</sourceType>
@@ -291,8 +254,7 @@ www.datacove.eu
 					<sourceExpression>
 						<OCQL>indice</OCQL>
 					</sourceExpression>
-				</AttributeMapping>	
-				
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:use</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -304,25 +266,21 @@ www.datacove.eu
 						<name>xlink:title</name>
 						<value>'missing in mapping'</value>
 					</ClientProperty>
-				</AttributeMapping>			
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:usePeriod/gml:TimePeriod</targetAttribute>
 					<idExpression>
 						<OCQL>strconcat('TimePeriod.purp.',indice)</OCQL>
 					</idExpression>
-				</AttributeMapping>			
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:usePeriod/gml:TimePeriod/gml:beginPosition</targetAttribute>
 					<sourceExpression>
 						<OCQL>date_debut</OCQL>
 					</sourceExpression>
-				</AttributeMapping>						
-				
+				</AttributeMapping>
 			</attributeMappings>
-		</FeatureTypeMapping> 			
-
+		</FeatureTypeMapping>
 		<FeatureTypeMapping>
 			<sourceDataStore>EPOS</sourceDataStore>
 			<sourceType>ks_borehole_use_mv</sourceType>
@@ -333,8 +291,7 @@ www.datacove.eu
 					<sourceExpression>
 						<OCQL>indice</OCQL>
 					</sourceExpression>
-				</AttributeMapping>	
-				
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:purpose</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -346,22 +303,19 @@ www.datacove.eu
 						<name>xlink:title</name>
 						<value>'missing in mapping'</value>
 					</ClientProperty>
-				</AttributeMapping>			
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:purposePeriod/gml:TimePeriod</targetAttribute>
 					<idExpression>
 						<OCQL>strconcat('TimePeriod.purp.',indice)</OCQL>
 					</idExpression>
-				</AttributeMapping>			
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:purposePeriod/gml:TimePeriod/gml:beginPosition</targetAttribute>
 					<sourceExpression>
 						<OCQL>date_debut</OCQL>
 					</sourceExpression>
-				</AttributeMapping>						
-				
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:purposeStatus</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -373,11 +327,9 @@ www.datacove.eu
 						<name>xlink:title</name>
 						<value>'Declare'</value>
 					</ClientProperty>
-				</AttributeMapping>							
-				
+				</AttributeMapping>
 			</attributeMappings>
-		</FeatureTypeMapping> 					
-
+		</FeatureTypeMapping>
 		<FeatureTypeMapping>
 			<sourceDataStore>EPOS</sourceDataStore>
 			<sourceType>ks_parameter_mv</sourceType>
@@ -388,8 +340,7 @@ www.datacove.eu
 					<sourceExpression>
 						<OCQL>indice</OCQL>
 					</sourceExpression>
-				</AttributeMapping>	
-				
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>om:name</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -397,87 +348,79 @@ www.datacove.eu
 						<name>xlink:href</name>
 						<value>namestr</value>
 					</ClientProperty>
-				</AttributeMapping>			
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>om:value</targetAttribute>
 					<sourceExpression>
 						<OCQL>valuestr</OCQL>
 					</sourceExpression>
-				</AttributeMapping>						
-				
+				</AttributeMapping>
 			</attributeMappings>
-		</FeatureTypeMapping> 					
-	
+		</FeatureTypeMapping>
 		<FeatureTypeMapping>
-			<sourceDataStore>EPOS</sourceDataStore>	 
-			<sourceType>ks_pe_sh_mv</sourceType> 
-			<targetElement>eposb:BoreholeMonitoringFacility</targetElement>	
+			<sourceDataStore>EPOS</sourceDataStore>
+			<sourceType>ks_pe_sh_mv</sourceType>
+			<targetElement>eposb:BoreholeMonitoringFacility</targetElement>
 			<attributeMappings>
 				<AttributeMapping>
 					<targetAttribute>FEATURE_LINK</targetAttribute>
 					<sourceExpression>
 						<OCQL>indice</OCQL>
 					</sourceExpression>
-				</AttributeMapping>			
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:linkingTime/gml:TimePeriod</targetAttribute>
 					<idExpression>
 						<OCQL>strconcat('mf.gml.point.',if_then_else(isNull(indice),'XXX',indice))</OCQL>
-					</idExpression>				
-				</AttributeMapping>	
+					</idExpression>
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:linkingTime/gml:TimePeriod/gml:beginPosition</targetAttribute>
 					<sourceExpression>
 						<OCQL>date_debut</OCQL>
 					</sourceExpression>
-				</AttributeMapping>					
+				</AttributeMapping>
 				<AttributeMapping>
-				    <targetAttribute>eposb:linkingTime/gml:TimePeriod/gml:endPosition</targetAttribute>
-				    <sourceExpression>
-					<OCQL>date_fin</OCQL>
-				    </sourceExpression>
-				    <encodeIfEmpty>true</encodeIfEmpty>
-				    <ClientProperty>
-					<name>indeterminatePosition</name>
-					<value>date_fin_unknown</value>
-				    </ClientProperty>
+					<targetAttribute>eposb:linkingTime/gml:TimePeriod/gml:endPosition</targetAttribute>
+					<sourceExpression>
+						<OCQL>date_fin</OCQL>
+					</sourceExpression>
+					<encodeIfEmpty>true</encodeIfEmpty>
+					<ClientProperty>
+						<name>indeterminatePosition</name>
+						<value>date_fin_unknown</value>
+					</ClientProperty>
 				</AttributeMapping>
 			</attributeMappings>
-		</FeatureTypeMapping> 					
-			
+		</FeatureTypeMapping>
 		<FeatureTypeMapping>
-			<sourceDataStore>EPOS</sourceDataStore>	 
-			<sourceType>ks_borehole_mv</sourceType> 
+			<sourceDataStore>EPOS</sourceDataStore>
+			<sourceType>ks_borehole_mv</sourceType>
 			<targetElement>eposb:Borehole</targetElement>
-			<defaultGeometry>eposb:bholeHeadworks/gwml-wellconstruction:BoreCollar/gwml-wellconstruction:collarLocation</defaultGeometry>			
+			<defaultGeometry>eposb:bholeHeadworks/gwml-wellconstruction:BoreCollar/gwml-wellconstruction:collarLocation</defaultGeometry>
 			<attributeMappings>
-			
 				<AttributeMapping>
 					<targetAttribute>eposb:Borehole</targetAttribute>
 					<idExpression>
 						<OCQL>bss_id</OCQL>
 					</idExpression>
-				</AttributeMapping>			
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>gml:identifier</targetAttribute>
 					<sourceExpression>
-						<OCQL>bss_id</OCQL>
+						<OCQL>indice</OCQL>
 					</sourceExpression>
 					<ClientProperty>
 						<name>codeSpace</name>
 						<value>'http://www.ietf.org/rfc/rfc2616'</value>
 					</ClientProperty>
-				</AttributeMapping>	
-			
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>gml:name</targetAttribute>
 					<sourceExpression>
 						<OCQL>libelle</OCQL>
 					</sourceExpression>
-				</AttributeMapping>	
-				
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>sam:type</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -489,8 +432,7 @@ www.datacove.eu
 						<name>xlink:title</name>
 						<value>'borehole'</value>
 					</ClientProperty>
-				</AttributeMapping>					
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>sam:sampledFeature </targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -502,8 +444,7 @@ www.datacove.eu
 						<name>xlink:title</name>
 						<value>'Lithosphere'</value>
 					</ClientProperty>
-				</AttributeMapping>	
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>sam:parameter</targetAttribute>
 					<sourceExpression>
@@ -511,19 +452,19 @@ www.datacove.eu
 						<linkElement>om:NamedValue</linkElement>
 						<linkField>FEATURE_LINK</linkField>
 					</sourceExpression>
-				</AttributeMapping>	
-
+				</AttributeMapping>
+				<!--
 				<AttributeMapping>
 					<targetAttribute>sams:shape</targetAttribute>
+					<idExpression> -->
+						<!--						<OCQL>bss_id</OCQL>  --> <!--	
+						<OCQL>strconcat('gml.point.',if_then_else(isNull(bss_id),'XXX',bss_id))</OCQL>
+					</idExpression>
 					<sourceExpression>
 						<OCQL>loc</OCQL>
 					</sourceExpression>
-					<idExpression>
-<!--						<OCQL>bss_id</OCQL>  -->
-						<OCQL>strconcat('gml.point.',if_then_else(isNull(bss_id),'XXX',bss_id))</OCQL> 
-					</idExpression>				
-				</AttributeMapping>				
-				
+				</AttributeMapping>
+				-->
 				<AttributeMapping>
 					<targetAttribute>eposb:boreholeUse</targetAttribute>
 					<sourceExpression>
@@ -531,15 +472,13 @@ www.datacove.eu
 						<linkElement>eposb:BoreholeUse</linkElement>
 						<linkField>FEATURE_LINK</linkField>
 					</sourceExpression>
-				</AttributeMapping>					
-				
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:custodian/eposb:Custodian/eposb:custodian/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString</targetAttribute>
 					<sourceExpression>
 						<OCQL>'BRGM'</OCQL>
 					</sourceExpression>
-				</AttributeMapping>					
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:custodian/eposb:Custodian/eposb:custodian/gmd:CI_ResponsibleParty/gmd:role/gmd:CI_RoleCode</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -551,8 +490,7 @@ www.datacove.eu
 						<name>codeListValue</name>
 						<value>'custodian'</value>
 					</ClientProperty>
-				</AttributeMapping>		
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:legalAccessLevel/gmd:MD_LegalConstraints/gmd:accessConstraints/gmd:MD_RestrictionCode</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -564,8 +502,7 @@ www.datacove.eu
 						<name>codeListValue</name>
 						<value>'openaccess'</value>
 					</ClientProperty>
-				</AttributeMapping>	
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:legalAccessLevel/gmd:MD_LegalConstraints/gmd:useConstraints/gmd:MD_RestrictionCode</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -577,27 +514,24 @@ www.datacove.eu
 						<name>codeListValue</name>
 						<value>'openaccess'</value>
 					</ClientProperty>
-				</AttributeMapping>					
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:length</targetAttribute>
-					<encodeIfEmpty>false</encodeIfEmpty>
 					<sourceExpression>
 						<OCQL>profondeur_investigation</OCQL>
 					</sourceExpression>
+					<encodeIfEmpty>false</encodeIfEmpty>
 					<ClientProperty>
 						<name>uom</name>
 						<value>'http://qudt.org/vocab/unit/M'</value>
 					</ClientProperty>
-				</AttributeMapping>		
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:operator/eposb:Operator/eposb:operator/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString</targetAttribute>
 					<sourceExpression>
 						<OCQL>'BRGM'</OCQL>
 					</sourceExpression>
-				</AttributeMapping>					
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:operator/eposb:Operator/eposb:operator/gmd:CI_ResponsibleParty/gmd:role/gmd:CI_RoleCode</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -609,8 +543,7 @@ www.datacove.eu
 						<name>codeListValue</name>
 						<value>'owner'</value>
 					</ClientProperty>
-				</AttributeMapping>	
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:purpose</targetAttribute>
 					<sourceExpression>
@@ -618,8 +551,7 @@ www.datacove.eu
 						<linkElement>eposb:Purpose</linkElement>
 						<linkField>FEATURE_LINK</linkField>
 					</sourceExpression>
-				</AttributeMapping>						
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:referenceElevation/eposb:Elevation/eposb:elevation</targetAttribute>
 					<sourceExpression>
@@ -637,8 +569,7 @@ www.datacove.eu
 						<name>uomLabels</name>
 						<value>'m'</value>
 					</ClientProperty>
-				</AttributeMapping>						
-				
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:referenceElevation/eposb:Elevation/eposb:elevationMeasurementMethod</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -651,8 +582,7 @@ www.datacove.eu
 						<name>xlink:title</name>
 						<value>if_then_else(isNull(elmeslibelle),'DGPS as Dummy',elmeslibelle)</value>
 					</ClientProperty>
-				</AttributeMapping>	
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:referenceElevation/eposb:Elevation/eposb:elevationType</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -664,8 +594,7 @@ www.datacove.eu
 						<name>xlink:title</name>
 						<value>'Ground surface'</value>
 					</ClientProperty>
-				</AttributeMapping>	
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:startPoint</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -677,8 +606,7 @@ www.datacove.eu
 						<name>xlink:title</name>
 						<value>'naturalLandSurface'</value>
 					</ClientProperty>
-				</AttributeMapping>	
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:status</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -690,20 +618,18 @@ www.datacove.eu
 						<name>xlink:title</name>
 						<value>'Opérationnel'</value>
 					</ClientProperty>
-				</AttributeMapping>		
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:boreCollarPositionalAccuracy</targetAttribute>
-					<encodeIfEmpty>false</encodeIfEmpty>
 					<sourceExpression>
 						<OCQL>prec_xy</OCQL>
 					</sourceExpression>
+					<encodeIfEmpty>false</encodeIfEmpty>
 					<ClientProperty>
 						<name>uom</name>
 						<value>'http://qudt.org/vocab/unit/CM'</value>
 					</ClientProperty>
 				</AttributeMapping>
-
 				<AttributeMapping>
 					<targetAttribute>eposb:locationMeasurementMethod</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -715,16 +641,14 @@ www.datacove.eu
 						<name>xlink:title</name>
 						<value>if_then_else(isNull(locmeslibelle),'DGPS as Dummy',locmeslibelle)</value>
 					</ClientProperty>
-				</AttributeMapping>		
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:accessibleDepth/eposb:AccessibleDepth/eposb:depthObservationTime/gml:TimeInstant/gml:timePosition</targetAttribute>
 					<sourceExpression>
-					<!-- wrong field, should be depth_date but wanted to see data! -->
+						<!-- wrong field, should be depth_date but wanted to see data! -->
 						<OCQL>date_creation</OCQL>
 					</sourceExpression>
-				</AttributeMapping>	
-				
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:accessibleDepth/eposb:AccessibleDepth/eposb:depth</targetAttribute>
 					<sourceExpression>
@@ -734,15 +658,13 @@ www.datacove.eu
 						<name>uom</name>
 						<value>'http://qudt.org/vocab/unit/M'</value>
 					</ClientProperty>
-				</AttributeMapping>	
-				
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:lifeCycleInfo/eposb:LifeCycleInfo/eposb:updateDate/gml:TimeInstant/gml:timePosition</targetAttribute>
 					<sourceExpression>
 						<OCQL>date_maj_dossier</OCQL>
 					</sourceExpression>
-				</AttributeMapping>	
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:lifeCycleInfo/eposb:LifeCycleInfo/eposb:status</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -754,15 +676,13 @@ www.datacove.eu
 						<name>xlink:title</name>
 						<value>'Validé'</value>
 					</ClientProperty>
-				</AttributeMapping>					
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:lifeCycleInfo/eposb:LifeCycleInfo/eposb:creationDate/gml:TimeInstant/gml:timePosition</targetAttribute>
 					<sourceExpression>
 						<OCQL>date_creation</OCQL>
 					</sourceExpression>
-				</AttributeMapping>		
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:locatedOnAdminUnit</targetAttribute>
 					<encodeIfEmpty>true</encodeIfEmpty>
@@ -774,8 +694,7 @@ www.datacove.eu
 						<name>xlink:title</name>
 						<value>nom_commune</value>
 					</ClientProperty>
-				</AttributeMapping>	
-				
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:bholeHeadworks/gwml-wellconstruction:BoreCollar/gwml-wellconstruction:collarElevation</targetAttribute>
 					<sourceExpression>
@@ -793,38 +712,34 @@ www.datacove.eu
 						<name>uomLabels</name>
 						<value>'m'</value>
 					</ClientProperty>
-				</AttributeMapping>	
-				
+				</AttributeMapping>
 				<!-- don't know why the location isn't working, but now it does! -->
 				<AttributeMapping>
 					<targetAttribute>eposb:bholeHeadworks/gwml-wellconstruction:BoreCollar/gwml-wellconstruction:collarLocation</targetAttribute>
+					<idExpression>
+						<OCQL>bss_id</OCQL>
+						<!--						<OCQL>strconcat('gml.point.',if_then_else(isNull(bss_id),'XXX',bss_id))</OCQL> -->
+					</idExpression>
 					<sourceExpression>
 						<OCQL>loc</OCQL>
 					</sourceExpression>
-					<idExpression>
-						<OCQL>bss_id</OCQL>
-<!--						<OCQL>strconcat('gml.point.',if_then_else(isNull(bss_id),'XXX',bss_id))</OCQL> -->
-					</idExpression>				
-				</AttributeMapping>		
-
+				</AttributeMapping>
 				<AttributeMapping>
 					<targetAttribute>eposb:monitoringFacility</targetAttribute>
 					<sourceExpression>
 						<OCQL>indice</OCQL>
-						<linkElement>eposb:BoreholeMonitoringFacility</linkElement> 
+						<linkElement>eposb:BoreholeMonitoringFacility</linkElement>
 						<linkField>FEATURE_LINK</linkField>
 					</sourceExpression>
 				</AttributeMapping>
-
 				<AttributeMapping>
 					<targetAttribute>eposb:alias</targetAttribute>
 					<sourceExpression>
 						<OCQL>indice</OCQL>
-						<linkElement>eposb:Alias</linkElement> 
+						<linkElement>eposb:Alias</linkElement>
 						<linkField>FEATURE_LINK</linkField>
 					</sourceExpression>
 				</AttributeMapping>
-
 				<AttributeMapping>
 					<targetAttribute>eposb:georesourceFeature</targetAttribute>
 					<sourceExpression>
@@ -832,9 +747,8 @@ www.datacove.eu
 						<linkElement>eposb:BoreholeGeoresource</linkElement>
 						<linkField>FEATURE_LINK</linkField>
 					</sourceExpression>
-				</AttributeMapping>				
-				
+				</AttributeMapping>
 			</attributeMappings>
 		</FeatureTypeMapping>
-	</typeMappings> 
+	</typeMappings>
 </as:AppSchemaDataAccess>
