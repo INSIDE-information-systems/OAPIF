@@ -397,7 +397,7 @@
 			<sourceDataStore>EPOS</sourceDataStore>
 			<sourceType>ks_borehole_mv</sourceType>
 			<targetElement>eposb:Borehole</targetElement>
-			<defaultGeometry>eposb:bholeHeadworks/gwml-wellconstruction:BoreCollar/gwml-wellconstruction:collarLocation</defaultGeometry>
+			<defaultGeometry>sams:shape/gml:Point</defaultGeometry>
 			<attributeMappings>
 				<AttributeMapping>
 					<targetAttribute>eposb:Borehole</targetAttribute>
