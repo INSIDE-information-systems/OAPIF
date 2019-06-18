@@ -402,7 +402,7 @@
 				<AttributeMapping>
 					<targetAttribute>eposb:Borehole</targetAttribute>
 					<idExpression>
-						<OCQL>bss_id</OCQL>
+						<OCQL>indice</OCQL>
 					</idExpression>
 				</AttributeMapping>
 				<AttributeMapping>
@@ -453,18 +453,18 @@
 						<linkField>FEATURE_LINK</linkField>
 					</sourceExpression>
 				</AttributeMapping>
-				<!--/wfs:FeatureCollection/wfs:member[1]/eposb:Borehole/sams:shape/gml:Point-->
+				<!--/wfs:FeatureCollection/wfs:member[1]/eposb:Borehole/sams:shape/gml:Point
 				<AttributeMapping>
 					<targetAttribute>sams:shape/gml:Point</targetAttribute>
-					<idExpression> 
-					<!--							<OCQL>bss_id</OCQL>  -->
+					<idExpression> -->
+					<!--							<OCQL>bss_id</OCQL>  --><!--
 						<OCQL>strconcat('gml.shape.point.',if_then_else(isNull(bss_id),'XXX',bss_id))</OCQL>	
 					</idExpression>
 					<sourceExpression>
 						<OCQL>loc</OCQL>
 					</sourceExpression>
 				</AttributeMapping>
-			 <!--	-->
+			 	-->
 				<AttributeMapping>
 					<targetAttribute>eposb:boreholeUse</targetAttribute>
 					<sourceExpression>
@@ -717,8 +717,9 @@
 				<AttributeMapping>
 					<targetAttribute>eposb:bholeHeadworks/gwml-wellconstruction:BoreCollar/gwml-wellconstruction:collarLocation</targetAttribute>
 					<idExpression>
-					<!--	<OCQL>bss_id</OCQL>-->
-												<OCQL>strconcat('gml.point.',if_then_else(isNull(bss_id),'XXX',bss_id))</OCQL> 
+						<OCQL>bss_id</OCQL>
+					<!--							<OCQL>strconcat('gml.point.',if_then_else(isNull(bss_id),'XXX',bss_id))</OCQL> 
+				-->
 					</idExpression>
 					<sourceExpression>
 						<OCQL>loc</OCQL>
