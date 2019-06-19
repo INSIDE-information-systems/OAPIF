@@ -725,7 +725,7 @@
 					<targetAttribute>eposb:bholeHeadworks/gwml-wellconstruction:BoreCollar/gwml-wellconstruction:collarLocation</targetAttribute>
 					<idExpression>
 					<!--	<OCQL>bss_id</OCQL>  -->
-						<OCQL>strconcat('gml.point.collar',if_then_else(isNull(bss_id),'XXX',bss_id))</OCQL> 
+						<OCQL>strconcat('gml.point.collar.',if_then_else(isNull(bss_id),'XXX',bss_id))</OCQL> 
 				
 					</idExpression>
 					<sourceExpression>
