@@ -462,7 +462,7 @@
 				</AttributeMapping>
 				<!--/wfs:FeatureCollection/wfs:member[1]/eposb:Borehole/sams:shape/gml:Point-->
 				<AttributeMapping>
-					<targetAttribute>sams:shape</targetAttribute>
+					<targetAttribute>sams:shape/gml:Point</targetAttribute>
 					<idExpression> 
 					<!--							<OCQL>bss_id</OCQL>  -->
 						<OCQL>strconcat('gml.shape.point.',if_then_else(isNull(bss_id),'XXX',bss_id))</OCQL>	
