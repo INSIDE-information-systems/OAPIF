@@ -402,8 +402,8 @@
 				<AttributeMapping>
 					<targetAttribute>eposb:Borehole</targetAttribute>
 					<idExpression>
-<!--						<OCQL>indice</OCQL>-->
-						<OCQL>bss_id</OCQL> 
+						<OCQL>indice</OCQL>
+<!--						<OCQL>bss_id</OCQL> -->
 					</idExpression>
 				</AttributeMapping>
 				<AttributeMapping>
