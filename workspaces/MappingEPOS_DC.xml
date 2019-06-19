@@ -397,14 +397,13 @@
 			<sourceDataStore>EPOS</sourceDataStore>
 			<sourceType>ks_borehole_mv</sourceType>
 			<targetElement>eposb:Borehole</targetElement>
-<!--			<defaultGeometry>eposb:bholeHeadworks/gwml-wellconstruction:BoreCollar/gwml-wellconstruction:collarLocation</defaultGeometry> -->
 			<defaultGeometry>sams:shape</defaultGeometry> 
 			<attributeMappings>
 				<AttributeMapping>
 					<targetAttribute>eposb:Borehole</targetAttribute>
 					<idExpression>
-						<OCQL>indice</OCQL>
-<!--						<OCQL>bss_id</OCQL> -->
+<!--						<OCQL>indice</OCQL>-->
+						<OCQL>bss_id</OCQL> 
 					</idExpression>
 				</AttributeMapping>
 				<AttributeMapping>
@@ -719,9 +718,9 @@
 				<AttributeMapping>
 					<targetAttribute>eposb:bholeHeadworks/gwml-wellconstruction:BoreCollar/gwml-wellconstruction:collarLocation</targetAttribute>
 					<idExpression>
-						<OCQL>bss_id</OCQL>
-					<!--							<OCQL>strconcat('gml.point.',if_then_else(isNull(bss_id),'XXX',bss_id))</OCQL> 
-				-->
+					<!--	<OCQL>bss_id</OCQL>-->
+						<OCQL>strconcat('gml.point.collar',if_then_else(isNull(bss_id),'XXX',bss_id))</OCQL> 
+				
 					</idExpression>
 					<sourceExpression>
 						<OCQL>loc</OCQL>
