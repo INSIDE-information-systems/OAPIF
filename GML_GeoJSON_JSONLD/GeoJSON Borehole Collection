@@ -1,0 +1,373 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+			"type": "Feature",
+			"id": "0001000001",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [51.0684, 1.4298]
+			},
+			"properties": {
+				"@featureType": "Borehole",
+				"identifier": {
+					"value": "BSS000AAAA",
+					"@codeSpace": "http://www.ietf.org/rfc/rfc2616"
+				},
+				"type": {
+					"@href": "http://vocabulary.odm2.org/samplingfeaturetype/borehole/",
+					"@title": "borehole"
+				},
+				"sampledFeature": [{
+						"@href": "https://sweet.jpl.nasa.gov/2.3/realmEarthReference.owl#EarthLithosphere",
+						"@title": "Lithosphere"
+					}
+				],
+				"shape": {
+					"@dataType": "shape",
+					"Point": {
+						"type": "Point",
+						"coordinates": [51.0684, 1.4298]
+					}
+				},
+				"custodian": {
+					"@dataType": "Custodian",
+					"custodian": {
+						"@dataType": "CI_ResponsibleParty",
+						"organisationName": "BRGM",
+						"role": {
+							"@codeListValue": "custodian",
+							"@codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml"
+						}
+					}
+				},
+				"legalAccessLevel": {
+					"@dataType": "MD_LegalConstraints",
+					"accessConstraints": {
+						"@codeListValue": "openaccess",
+						"@codeList": ""
+					},
+					"useConstraints": {
+						"@codeListValue": "openaccess",
+						"@codeList": ""
+					}
+				},
+				"length": {
+					"value": 82,
+					"@uom": "http://qudt.org/vocab/unit/M"
+				},
+				"operator": {
+					"@dataType": "Operator",
+					"operator": {
+						"@dataType": "CI_ResponsibleParty",
+						"organisationName": "BRGM",
+						"role": {
+							"@codeListValue": "owner",
+							"@codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml"
+						}
+					}
+				},
+				"referenceElevation": {
+					"@dataType": "Elevation",
+					"elevation": {
+						"value": -32,
+						"@srsName": "http://www.opengis.net/def/crs/EPSG/0/5720",
+						"@srsDimension": "1",
+						"@uomLabels": "m"
+					},
+					"elevationMeasurementMethod": {
+						"@href": "http://id.eaufrance.fr/nsa/892#XXX",
+						"@title": "DGPS as Dummy"
+					},
+					"elevationType": {
+						"@href": "http://resource.europe-geology.eu/vocabs/elevationtype/groundSurface",
+						"@title": "Ground surface"
+					}
+				},
+				"startPoint": {
+					"@href": "http://resource.europe-geology.eu/vocabs/StartPoint/naturalLandSurface",
+					"@title": "naturalLandSurface"
+				},
+				"status": {
+					"@href": "http://id.eaufrance.fr/nsa/146#XXX",
+					"@title": "Opérationnel"
+				},
+				"boreCollarPositionalAccuracy": {
+					"@uom": "http://qudt.org/vocab/unit/CM"
+				},
+				"locationMeasurementMethod": {
+					"@href": "http://id.eaufrance.fr/nsa/917#XXX",
+					"@title": "DGPS as Dummy"
+				},
+				"accessibleDepth": {
+					"@dataType": "AccessibleDepth",
+					"depthObservationTime": {
+						"@dataType": "TimeInstant",
+						"timePosition": "2007-05-20T22:00:00Z"
+					}
+				},
+				"lifeCycleInfo": {
+					"@dataType": "LifeCycleInfo",
+					"updateDate": {
+						"@dataType": "TimeInstant",
+						"timePosition": "2015-06-15T14:59:45Z"
+					},
+					"status": {
+						"@href": "http://id.eaufrance.fr/nsa/390#XXX",
+						"@title": "Validé"
+					},
+					"creationDate": {
+						"@dataType": "TimeInstant",
+						"timePosition": "2007-05-20T22:00:00Z"
+					}
+				},
+				"locatedOnAdminUnit": {
+					"@href": "6262774",
+					"@title": "SANGATTE"
+				},
+				"bholeHeadworks": [{
+						"type": "Feature",
+						"geometry": {
+							"type": "Point",
+							"coordinates": [51.0684, 1.4298]
+						},
+						"properties": {
+							"@featureType": "BoreCollar",
+							"collarElevation": {
+								"value": -32,
+								"@srsName": "http://www.opengis.net/def/crs/EPSG/0/5720",
+								"@srsDimension": "1",
+								"@uomLabels": "m"
+							}
+						}
+					}
+				]
+			}
+		}, {
+			"type": "Feature",
+			"id": "0001000002",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [51.0744, 1.4191]
+			},
+			"properties": {
+				"@featureType": "Borehole",
+				"identifier": {
+					"value": "BSS000AAAB",
+					"@codeSpace": "http://www.ietf.org/rfc/rfc2616"
+				},
+				"type": {
+					"@href": "http://vocabulary.odm2.org/samplingfeaturetype/borehole/",
+					"@title": "borehole"
+				},
+				"sampledFeature": [{
+						"@href": "https://sweet.jpl.nasa.gov/2.3/realmEarthReference.owl#EarthLithosphere",
+						"@title": "Lithosphere"
+					}
+				],
+				"shape": {
+					"@dataType": "shape",
+					"Point": {
+						"type": "Point",
+						"coordinates": [51.0744, 1.4191]
+					}
+				},
+				"custodian": {
+					"@dataType": "Custodian",
+					"custodian": {
+						"@dataType": "CI_ResponsibleParty",
+						"organisationName": "BRGM",
+						"role": {
+							"@codeListValue": "custodian",
+							"@codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml"
+						}
+					}
+				},
+				"legalAccessLevel": {
+					"@dataType": "MD_LegalConstraints",
+					"accessConstraints": {
+						"@codeListValue": "openaccess",
+						"@codeList": ""
+					},
+					"useConstraints": {
+						"@codeListValue": "openaccess",
+						"@codeList": ""
+					}
+				},
+				"length": {
+					"value": 77.42,
+					"@uom": "http://qudt.org/vocab/unit/M"
+				},
+				"operator": {
+					"@dataType": "Operator",
+					"operator": {
+						"@dataType": "CI_ResponsibleParty",
+						"organisationName": "BRGM",
+						"role": {
+							"@codeListValue": "owner",
+							"@codeList": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml"
+						}
+					}
+				},
+				"referenceElevation": {
+					"@dataType": "Elevation",
+					"elevation": {
+						"value": -30.8,
+						"@srsName": "http://www.opengis.net/def/crs/EPSG/0/5720",
+						"@srsDimension": "1",
+						"@uomLabels": "m"
+					},
+					"elevationMeasurementMethod": {
+						"@href": "http://id.eaufrance.fr/nsa/892#XXX",
+						"@title": "DGPS as Dummy"
+					},
+					"elevationType": {
+						"@href": "http://resource.europe-geology.eu/vocabs/elevationtype/groundSurface",
+						"@title": "Ground surface"
+					}
+				},
+				"startPoint": {
+					"@href": "http://resource.europe-geology.eu/vocabs/StartPoint/naturalLandSurface",
+					"@title": "naturalLandSurface"
+				},
+				"status": {
+					"@href": "http://id.eaufrance.fr/nsa/146#XXX",
+					"@title": "Opérationnel"
+				},
+				"boreCollarPositionalAccuracy": {
+					"@uom": "http://qudt.org/vocab/unit/CM"
+				},
+				"locationMeasurementMethod": {
+					"@href": "http://id.eaufrance.fr/nsa/917#XXX",
+					"@title": "DGPS as Dummy"
+				},
+				"accessibleDepth": {
+					"@dataType": "AccessibleDepth",
+					"depthObservationTime": {
+						"@dataType": "TimeInstant",
+						"timePosition": "1998-03-11T10:55:17Z"
+					}
+				},
+				"lifeCycleInfo": {
+					"@dataType": "LifeCycleInfo",
+					"updateDate": {
+						"@dataType": "TimeInstant",
+						"timePosition": "2014-01-24T10:10:25Z"
+					},
+					"status": {
+						"@href": "http://id.eaufrance.fr/nsa/390#XXX",
+						"@title": "Validé"
+					},
+					"creationDate": {
+						"@dataType": "TimeInstant",
+						"timePosition": "1998-03-11T10:55:17Z"
+					}
+				},
+				"locatedOnAdminUnit": {
+					"@href": "6262774",
+					"@title": "SANGATTE"
+				},
+				"bholeHeadworks": [{
+						"type": "Feature",
+						"geometry": {
+							"type": "Point",
+							"coordinates": [51.0744, 1.4191]
+						},
+						"properties": {
+							"@featureType": "BoreCollar",
+							"collarElevation": {
+								"value": -30.8,
+								"@srsName": "http://www.opengis.net/def/crs/EPSG/0/5720",
+								"@srsDimension": "1",
+								"@uomLabels": "m"
+							}
+						}
+					}
+				]
+			}
+		}
+	],
+	"numberReturned": 2,
+	"timeStamp": "2019-07-09T09:24:15.314Z",
+	"links": [{
+			"title": "This document as application/vnd.google-earth.kml+xml",
+			"type": "application/vnd.google-earth.kml+xml",
+			"rel": "alternate",
+			"href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=application%2Fvnd.google-earth.kml%2Bxml"
+		}, {
+			"title": "This document as application/vnd.google-earth.kml xml",
+			"type": "application/vnd.google-earth.kml xml",
+			"rel": "alternate",
+			"href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=application%2Fvnd.google-earth.kml%20xml"
+		}, {
+			"title": "This document as text/xml; subtype=gml/2.1.2",
+			"type": "text/xml; subtype=gml/2.1.2",
+			"rel": "alternate",
+			"href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=text%2Fxml%3B%20subtype%3Dgml%2F2.1.2"
+		}, {
+			"title": "This document as text/xml; subtype=gml/3.1.1",
+			"type": "text/xml; subtype=gml/3.1.1",
+			"rel": "alternate",
+			"href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=text%2Fxml%3B%20subtype%3Dgml%2F3.1.1"
+		}, {
+			"title": "This document as application/gml+xml; version=3.2",
+			"type": "application/gml+xml; version=3.2",
+			"rel": "alternate",
+			"href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=application%2Fgml%2Bxml%3B%20version%3D3.2"
+		}, {
+			"title": "This document as text/xml; subtype=gml/3.2",
+			"type": "text/xml; subtype=gml/3.2",
+			"rel": "alternate",
+			"href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=text%2Fxml%3B%20subtype%3Dgml%2F3.2"
+		}, {
+			"title": "This document as application/json",
+			"type": "application/json",
+			"rel": "alternate",
+			"href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=application%2Fjson"
+		}, {
+			"title": "This document",
+			"type": "application/geo+json",
+			"rel": "self",
+			"href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=application%2Fgeo%2Bjson"
+		}, {
+			"title": "This document as text/html",
+			"type": "text/html",
+			"rel": "alternate",
+			"href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=text%2Fhtml"
+		}, {
+			"title": "This document as application/gml+xml;version=3.2;profile=http://www.opengis.net/def/profile/ogc/2.0/gml-sf0",
+			"type": "application/gml+xml;version=3.2;profile=http://www.opengis.net/def/profile/ogc/2.0/gml-sf0",
+			"rel": "alternate",
+			"href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=application%2Fgml%2Bxml%3Bversion%3D3.2%3Bprofile%3Dhttp%3A%2F%2Fwww.opengis.net%2Fdef%2Fprofile%2Fogc%2F2.0%2Fgml-sf0"
+		}, {
+			"title": "This document as application/vnd.mapbox-vector-tile",
+			"type": "application/vnd.mapbox-vector-tile",
+			"rel": "alternate",
+			"href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=application%2Fvnd.mapbox-vector-tile"
+		}, {
+			"title": "This document as application/x-protobuf;type=mapbox-vector",
+			"type": "application/x-protobuf;type=mapbox-vector",
+			"rel": "alternate",
+			"href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole/items?f=application%2Fx-protobuf%3Btype%3Dmapbox-vector"
+		}, {
+			"title": "The collection description as application/json",
+			"type": "application/json",
+			"rel": "collection",
+			"href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole?f=application%2Fjson"
+		}, {
+			"title": "The collection description as application/x-yaml",
+			"type": "application/x-yaml",
+			"rel": "collection",
+			"href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole?f=application%2Fx-yaml"
+		}, {
+			"title": "The collection description as application/xml",
+			"type": "application/xml",
+			"rel": "collection",
+			"href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole?f=application%2Fxml"
+		}, {
+			"title": "The collection description as text/html",
+			"type": "text/html",
+			"rel": "collection",
+			"href": "http://brgm-dev.geo-solutions.it:80/geoserver/wfs3/collections/eposb__Borehole?f=text%2Fhtml"
+		}
+	]
+}
