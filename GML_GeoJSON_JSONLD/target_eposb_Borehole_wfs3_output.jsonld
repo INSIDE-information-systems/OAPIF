@@ -12,6 +12,7 @@
 		"gml": "http://www.opengis.net/gml/3.2#",
 		"gwmlwc": "http://www.opengis.net/gwml-wellconstruction/2.2#",
 		"schema": "https://schema.org/",
+		"dc": "http://purl.org/dc/terms/",
 		"Feature": "gsp:Feature",
 		"FeatureCollection": "schema:Collection", 
 		"GeometryCollection": "sf:GeometryCollection",
@@ -29,8 +30,8 @@
 		  "@id": "schema:hasPart"
 		},
 		"geometry": "sf:geometry",
-		"description": "http://purl.org/dc/terms/description",
-		"title": "http://purl.org/dc/terms/title",
+		"description": "dc:description",
+		"title": "dc:title",
 		"name":"schema:name"
     },
    
@@ -49,8 +50,8 @@
 			"@id":"https://sweet.jpl.nasa.gov/2.3/realmEarthReference.owl#EarthLithosphere",
 			"name":"Lithosphere"
 			},
-		"eposb:custodian": [{
-			"@type": "eposb:Custodian",
+		"custody": [{
+			"@type": "eposb:Custody",
 			"eposb:custodian": {
 				"@type": "ci:ResponsibleParty",
 				"ci:organisationName": "BRGM",
@@ -59,7 +60,7 @@
 					"@id": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/code/Role/custodian"
 				}
 			},
-			"eposb:custodianPeriod": {
+			"eposb:custodyPeriod": {
 				"@type": "time:Period",
 				"time:hasBeginning": {"time:inXSDDateTime":"2015-06-15T14:59:45Z"},
 				"time:hasEnd": {"time:inXSDDateTime":"2017-06-15T14:59:45Z"}
@@ -81,8 +82,8 @@
 			"om:amount": 82,
 			"om:uom": "http://qudt.org/vocab/unit/M"
 		},
-		"eposb:perator": {
-			"@type": "eposb:Operator",
+		"eposb:operation": {
+			"@type": "eposb:Operation",
 			"eposb:operator": {
 				"@type": "ci:ResponsibleParty",
 				"ci:organisationName": "BRGM",
@@ -145,7 +146,7 @@
 		},
 		"eposb:locatedOnAdminUnit": {
 			"@id": "http://id.insee.fr/geo/commune/62774",
-			"name": "SANGATTE"
+			"name": "SANGATTE" // in the mapping this should not be static but pointing to the relevant field in the DB
 		},
 		"bholeHeadworks": [
 			{
