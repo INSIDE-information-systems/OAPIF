@@ -9,31 +9,22 @@
 		"md": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/metadata#",
 		"mdex": "http://def.seegrid.csiro.au/isotc211/iso19115/2003/extent#",
 		"time": "http://www.w3.org/2006/time#",
-		"gml": "http://www.opengis.net/gml/3.2#",
 		"gwmlwc": "http://www.opengis.net/gwml-wellconstruction/2.2#",
 		"schema": "https://schema.org/",
 		"dc": "http://purl.org/dc/terms/",
 		"Feature": "gsp:Feature",
-		"FeatureCollection": "schema:Collection", 
-		"GeometryCollection": "sf:GeometryCollection",
-		"Geometry": "sf:Geometry",
-		"LineString": "sf:LineString",
-		"MultiLineString": "sf:MultiLineString",
-		"MultiPoint": "sf:MultiPoint",
-		"MultiPolygon": "sf:MultiPolygon",
+		"FeatureCollection": "schema:Collection",
 		"Point": "sf:Point",
-		"Polygon": "sf:Polygon",
-		"bbox": "sf:envelope",
 		"wkt": "gsp:asWKT",
 		"features": {
-		  "@container": "@set",
-		  "@id": "schema:hasPart"
+		"@container": "@set",
+		"@id": "schema:hasPart"
 		},
 		"geometry": "sf:geometry",
-		"description": "dc:description",
-		"title": "dc:title",
-		"name":"schema:name"
-    },
+			"description": "dc:description",
+			"title": "dc:title",
+		"name": "schema:name"
+	},
    
 	"type": "FeatureCollection",
     "features": [

@@ -1,0 +1,124 @@
+{
+	"@context": {
+		"gsp": "http://www.opengis.net/ont/geosparql#",
+		"sf": "http://www.opengis.net/ont/sf#",
+		"schema": "https://schema.org/",
+		"dc": "http://purl.org/dc/terms/",
+		"eposl": "https://data.geoscience.earth/def/eposl#",
+		"om": "http://def.seegrid.csiro.au/ontology/om/om-lite#",
+		"xsd": "http://www.w3.org/2001/XMLSchema#",      	
+		"name":"schema:name",
+		"wkt": "gsp:asWKT",
+		"description": "dc:description",
+		"Feature": "gsp:Feature",
+		"geometry": "sf:geometry",
+		"FeatureCollection": "schema:Collection", 
+		"features": {
+		  "@container": "@set",
+		  "@id": "schema:hasPart"
+		},
+		"Point": "sf:Point"
+    },
+   
+	"type": "FeatureCollection",
+    "features": [
+        {
+		"@id": "https://data.geoscience.fr/id/Borehole/BSS001REWW",
+		"@type": ["Feature", "eposb:BoreholeView", "eposb:Borehole","http://vocabulary.odm2.org/samplingfeaturetype/borehole"],
+		"name":"Forage BSS001REWW",
+		"geometry": {
+			"@type": "Point",
+			"wkt": "<http://www.opengis.net/def/crs/OGC/1.3/CRS84>POINT(5.18713262971692 46.1909541655103)"
+		},
+		"description": "Borehole description",
+		"eposl:purpose":{
+			"@id":"http://inspire.ec.europa.eu/codelist/BoreholePurposeValue/hydrogeologicalSurvey",
+			"name":"levé hydrogéologique, gestion de l’eau"
+		},
+		"eposl:status":{
+			"@id":"https://data.geoscience.earth/ncl/BoreholeStatus/drillingCompleted",
+			"@type": "skos:Concept",
+			"name":"drilling completed"
+		},
+		"eposl:drillingMethod":{
+			"@id":"https://data.geoscience.earth/ncl/DrillingMethod/hydraulicRotaryDrilling",
+			"@type": "skos:Concept",
+			"name":"hydraulic rotary drilling"
+		},
+		"eposl:operator":"BRGM (PIEZOMETRIE)",
+		"eposl:driller" : "INTRAFOR-COFOR",
+		"eposl:drillEndDate": {
+          "@value":"1974-11-30Z",
+          "@type":"xsd:date"
+        },
+		"eposl:startPoint":{
+			"@id":"https://data.geoscience.earth/ncl/StartPoint/naturalLandSurface",
+			"@type": "skos:Concept",
+			"name":"natural land surface"
+		},
+		"eposl:inclinationType":{
+			"@id":"https://data.geoscience.earth/ncl/BoreholeInclinationType/vertical",
+			"@type": "skos:Concept",
+			"name":"vertical"
+		},
+		"eposl:boreholeMaterialCustodian": "unknown",
+		"eposl:boreholeLength_m":{
+			"@type":"om:SimpleMeasure",
+			"om:amount": 82,
+			"om:uom": "http://qudt.org/vocab/unit/M"
+		},
+		"eposl:elevation_m":{
+			"@type":"om:SimpleMeasure",
+			"om:amount": 223.87,
+			"om:uom": "http://qudt.org/vocab/unit/M"
+		},
+		"eposl:source":"http://ficheinfoterre.brgm.fr/InfoterreFiche/ficheBss.action?id=06512X0037/STREMY",
+		"dct:source" : "http://www.geocatalogue.fr/Detail.do?fileIdentifier=BR_BSS_BAA",
+		"eposl:genericSymbolizer":"Not provided",
+		"eposl:cored": {
+          "@value":"true",
+          "@type":"xsd:boolean"
+        },
+        "eposl:accessToPhysicalDrillCore" : {
+          "@value":"true",
+          "@type":"xsd:boolean"
+        },
+		"eposl:boreholeUse": {
+			"@id":"http://inspire.ec.europa.eu/codelist/BoreholePurposeValue/groundwaterLevelMonitoring",
+			"name":"surveillance du niveau de la nappe phréatique"
+		},
+		"eposl:detailedDescription":{
+			"@id":"http://www.opengis.net/def/nil/OGC/0/template",
+			"name":"template"
+		},
+		"eposl:geophysicalLogs":{
+			"@id":"http://www.opengis.net/def/nil/OGC/0/unknown",
+			"name":"unknown"
+		},
+		"eposl:geologicalDescription":{
+			"@id":"http://ressource.brgm-rec.fr/obs/RawGeologicLogs/BSS001REWW",
+			"name":"Borehole BSS001REWW geologic log available."
+		},
+		"eposl:groundWaterLevel":{
+			"@id":"http://ressource.brgm-rec.fr/data/Piezometre/06512X0037/STREMY.2",
+			"name":"Description of Piezometer attached to BSS001REWW. Provides link to SensorObservationService offering."
+		},
+		"eposl:groundWaterChemistry":{
+			"@id":"http://www.opengis.net/def/nil/OGC/0/unknown",
+			"name":"unknown"
+		},
+		"eposl:rockGeochemistry":{
+			"@id":"http://www.opengis.net/def/nil/OGC/0/unknown",
+			"name":"unknown"
+		},
+		"eposl:poreGasChemistry":{
+			"@id":"http://www.opengis.net/def/nil/OGC/0/inapplicable",
+			"name":"inapplicable"
+		},
+		"eposl:geoTechnicalInfo":{
+			"@id":"http://www.opengis.net/def/nil/OGC/0/unknown",
+			"name":"unknown"
+		}
+	
+	}]
+}
