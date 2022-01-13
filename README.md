@@ -16,7 +16,7 @@ OGC API - Features implementation deployed is Geoserver OGC API - Feature commun
 ## 2°/ Surface and ground water Features - INSPIRE (API4INSPIRE project)
 
 According to INSPIRE Hydro (HY), Environmental Monitoring Facilities (EF) with a link to observation download services (OGC SensorThings API).
-Most of the work is described in this other repo <https://github.com/INSIDE-information-systems/API4INSPIRE>
+Most of the work is described in this other repo <https://github.com/INSIDE-information-systems/API4INSPIRE>. See also <https://datacoveeu.github.io/API4INSPIRE/>
 
 ## 3°/ National information systems
 
@@ -30,6 +30,7 @@ Mainly through evolution funded by Pole INSIDE (INSIDE Research Center). By orde
 - 2°/ JSON-LD community plugin : <https://docs.geoserver.org/stable/en/user/community/json-ld/index.html>. Announcement: <http://blog.geoserver.org/2020/01/22/geoserver-2-16-2-released/> plugin that was then renamed into "GeoServer Features-Templating Extension"
 - 3°/ GeoServer Features-Templating Extension (<https://docs.geoserver.org/stable/en/user/community/features-templating/index.html>). "Announcement" see State of [GeoServer 2.20 edition](https://docs.google.com/presentation/d/19Cmld0_VFePh1g4qUSfqNWWB0t-teClFpT3eUqpYGos/edit#slide=id.gf2908a2c17_0_231)
 - 4°/ Geoserver SMART Data-loader extension (funded along with JRC during the API4INSPIRE project): <https://docs.geoserver.org/stable/en/user/community/smart-data-loader/index.html>
+- 5°/ Support to the INSPIRE Good Practice: "INSPIRE download services based on OGC API - Features" : <https://github.com/INSPIRE-MIF/gp-ogc-api-features>
 
 
 # Challenges
