@@ -159,7 +159,7 @@ Commentaire : Le document s’intitule service de transformation. Quelle est l�
 
 Proposition : Le pôle INSIDE ne saurait que trop recommander de procéder d’abord à la mise en place de service de téléchargement interopérables.
 
-La réalisation technique n’étant pas compliquée et les étant outils matures (ex : Geoserver avec ses extensions), cette approche permet de maximiser la réutilisation des données du référentiel hydrographique français (ex : par les autres SI fédérateurs de l’OFB et d’autres). Elle capitalisera également sur les années de R&D, maturation et contribution du pôle INSIDE sur le sujet au titre des SI Fédérateurs de l’OFB.
+La réalisation technique n’étant pas compliquée et les outils étant matures (ex : Geoserver avec ses extensions), cette approche permet de maximiser la réutilisation des données du référentiel hydrographique français (ex : par les autres SI fédérateurs de l’OFB et d’autres). Elle capitalisera également sur les années de R&D, maturation et contribution du pôle INSIDE sur le sujet au titre des SI Fédérateurs de l’OFB.
 
 A l’opposé, la seule mise en place d’un service de transformation peut s’avérer plus longue et un tel service peut se retrouver ‘isolé’ en périphérie des autres services Sandre. Ce qui serait dommageable quand on connait les possibilités qu’ouvrent un tel changement de paradigme.
 
