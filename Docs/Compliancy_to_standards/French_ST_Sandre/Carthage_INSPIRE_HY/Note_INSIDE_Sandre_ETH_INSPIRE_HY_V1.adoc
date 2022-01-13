@@ -1,0 +1,443 @@
+ "Analyse du scénario de transformation - Diffusion du référentiel hydrographique (BD Carthage®) au format INSPIRE (version 1Beta9) proposé par le Secrétariat Technique du SANDRE
+- Janvier 2022"
+
+== Metadonnées
+
+*Titre :* Analyse du scénario de transformation - Diffusion du référentiel hydrographique (BD Carthage®) au format INSPIRE (version 1Beta9) proposé par le Secrétariat Technique du SANDRE
+
+*Créateur :* Pôle INSIDE
+
+*Contributeurs :* BRGM
+
+*Résumé :* Ce document a pour objet de récapituler les résultats d’une première analyse du scénario de transformation (version 1Beta9) du référentiel BD Carthage pour le rendre conforme au thème INSPIRE HY (Hydrography).
+
+*Date de création :* janvier 2022
+
+*Version* 1.0
+
+**URL **https://github.com/INSIDE-information-systems/OAPIF/tree/master/Docs/Compliancy_to_standards/French_ST_Sandre/Carthage_INSPIRE_HY/Note_INSIDE_Sandre_ETH_INSPIRE_HY_V1.adoc
+
+== SOMMAIRE
+
+link:#introduction[1 Introduction 4]
+
+link:#contexte[2 Contexte 4]
+
+link:#remarques-transverses[3 Remarques transverses 5]
+
+link:#philosophie-de-mapping[3.1 Philosophie de mapping 5]
+
+link:#transformation-vs-mise-en-conformité[3.2 Transformation VS mise en conformité 6]
+
+link:#schématisation[3.3 Schématisation 6]
+
+link:#identification-des-éléments-mis-en-correspondance[3.4 Identification des éléments mis en correspondance 7]
+
+link:#identifiants[3.5 Identifiants 7]
+
+link:#identifiants-gml[3.5.1 Identifiants GML 7]
+
+link:#hydroidentifier[3.5.2 HydroIdentifier 7]
+
+link:#usage-de-hydro-id-inspire-id[3.5.3 Usage de hydro Id/ inspire Id 8]
+
+link:#usage-des-xlinkhrefxlinktitle[3.6 Usage des xlink:href/xlink:title 8]
+
+link:#attribut-uom[3.7 Attribut uom 9]
+
+link:#levelofdetail[3.8 levelOfDetail 9]
+
+link:#lifespanversion-begin-et-end[3.9 LifeSpanVersion (begin et end) 9]
+
+link:#i.c.4.interopérabilité-des-données[4 « I.C.4.Interopérabilité des données » 9]
+
+link:#ii.introduction[5 « II.INTRODUCTION » 10]
+
+link:#iii.description-détaillée-de-la-transformation[6 « III.DESCRIPTION DÉTAILLÉE DE LA TRANSFORMATION » 10]
+
+link:#iii.a.1.caractère-obligatoire-facultatif-et-voidable-dun-élément[6.1 « III.A.1.Caractère Obligatoire, Facultatif et Voidable d’un élément » 10]
+
+link:#iii.a.6.-annotation-des-éléments-xml-enfants-et-parents[6.2 « III.A.6. Annotation des éléments XML enfants et parents » 10]
+
+link:#iii.c.2.balise-racine[6.3 « III.C.2.Balise racine » 10]
+
+link:#v.b.structure-du-concept-cours-deau[7 « V.B.Structure du concept : Cours d’eau » 11]
+
+link:#v.b.2.a.9-structure-de-lattribut-drainsbasin[7.1 « V.B.2.a.9 Structure de l’attribut : drainsBasin » 11]
+
+link:#v.c.structure-du-concept-plan-deau[8 « V.C.Structure du concept : Plan d’eau » 11]
+
+link:#v.c.1.bstructure-de-lattribut-geometry[8.1 « V.C.1.bStructure de l’attribut : geometry » 11]
+
+link:#v.e.structure-du-concept-tronçon-hydrographique[9 « V.E.Structure du concept : Tronçon hydrographique » 11]
+
+link:#v.e.1.g-structure-des-associations-end-node-start-node[9.1 «  V.E.1.g Structure des associations : end Node / start Node » 11]
+
+link:#v.e.1.h-structure-de-lassociation-in-network[9.2 « V.E.1.h Structure de l’association : in Network » 11]
+
+link:#manque-du-mapping-pour-le-concept-de-tronçon-hydrographique-circulaire[9.3 Manque du mapping pour le concept de Tronçon hydrographique (Circulaire) 12]
+
+link:#v.f.structure-du-concept-nœud-hydrographique[10 « V.F.Structure du concept : Nœud hydrographique » 12]
+
+link:#v.f.2.a.2-structure-de-lattribut-in-network[10.1 « V.F.2.a.2 Structure de l'attribut : in Network » 12]
+
+link:#v.c.structure-du-concept-plan-deau-1[11 « V.C.Structure du concept : Plan d’eau » 13]
+
+link:#conclusion[12 Conclusion 13]
+
+== Introduction
+
+Ce document a pour objet de récapituler les résultats d’une première analyse du scénario de transformation (version 1Beta9) du référentiel BD Carthage pour le rendre conforme au thème INSPIRE HY (Hydrography).
+
+Cet exercice s’est autant focalisé sur l’exercice de mapping en lui-même que sur l’approche plus globale. En effet, s’agissant d’un premier exercice réalisé par le ST Sandre sur le sujet il est important de caler la méthodologie / philosophie de travail au mieux.
+
+L’analyse effectuée par le pôle INSIDE fait ressortir différents niveaux de retour qui visent à améliorer la façon dont les données du Système d’Information sur l’Eau (SIE) sont conformes aux règles d’implémentation INSPIRE mais également dans la même dynamique que celle de la communauté INSPIRE.
+
+Le chapitres 3 de ce document contient les remarques transverses à l’exercice.
+
+Les chapitres 4 à 11 contiennent spécifiques à une section du document.
+
+== Contexte
+
+Dans le cadre des travaux menés depuis ses débuts sur l’interopérabilité sémantique et technique des données, le Pôle INSIDE fournit son expertise technique sur ces sujets aussi bien au niveau national pour appuyer les SI fédérateurs de l’OFB et leurs partenaires qu’au niveau européen au sein d’un réseau d’experts INSPIRE appuyant la Commission Européenne à l’application et l’évolution du contexte technique de celle-ci.
+
+A titre d’exemple il a contribué à la réécriture des recommandations sur l’usage d’Observations & Measurements (INSPIRE D2.9footnote:[https://inspire.ec.europa.eu/id/document/tg/d2.9-o%26m-swe]) et récemment à la reconnaissance de deux récentes API OGC comme service de téléchargement INSPIRE (OGC API – Featuresfootnote:[https://inspire.ec.europa.eu/good-practice/ogc-api-%E2%80%93-features-inspire-download-service], OGC SensorThings API Part 1footnote:[https://inspire.ec.europa.eu/good-practice/ogc-sensorthings-api-inspire-download-service]). Ces deux dernières activités se sont entre autre faites dans le cadre du projet Européen API4INSPIREfootnote:[https://datacoveeu.github.io/API4INSPIRE/]footnote:[https://github.com/INSIDE-information-systems/API4INSPIRE], projet dans lequel des données de la BD Carthage ® ont été exposées de façon conforme INSPIRE sur le bassin Rhin-Meuse ainsi que celles des réseaux de monitoring eaux de surface et eaux souterraines.
+
+En tant que membre du GPIGE le pôle INSIDE a donc analysé la proposition de scénario de transformation faite par le ST Sandre lors du GPIGE de décembre 2021.
+
+Les experts du Pôle INSIDE sont par formation mais également par leur activité quotidienne impliqués dans ces dynamiques aux niveaux national, européen et international. Ils sont donc au fait des pratiques en cours et y contribuent directement.
+
+Cette première analyse de ces travaux est importante car :
+
+* Le document proposé par le ST Sandre est une première à l’échelle du SIE. Il convient donc de cadrer l’approche au mieux dès le début pour une meilleure propagation au reste du SIE.
+* Il ne s’agit pas en réalité d’un simple travail de transformation mais bel et bien d’un changement de paradigme dans la façon d’exposer les données rapprochant les données du SIE des bonnes pratiques internationales en cours,
+* Par conséquent ce travail pourra également servir de base à une meilleure connexion vers les autres SI nationaux (entre autre les SI fédérateurs de l’OFB) et également vers d’autres dynamiques nationales et internationales (données de la rechercher par exemple avec des Infrastructures de Recherches telles OZCAR/THEIA).
+
+L’analyse se base sur le document en version 1Beta9 fourni avec les documents de séance.
+
+L’analyse fait ressortir à la fois des retours
+
+* sur l’approche globale,
+* et sur certaines mises en correspondance (mappings), certains choix spécifiques.
+
+== Remarques transverses
+
+Cette section regroupe les remarques qui s’appliquent à différents éléments et de ce fait apparaissent plusieurs fois.
+
+=== Philosophie de mapping
+
+Commentaire : Le document présente un mapping Sandre vers un thème INSPIRE.
+
+Mais l'obligation est de respecter/alimenter les concepts des thèmes INSPIRE.
+
+En effet, le découpage en thème et le fait qu'un concept (Feature) soit modélisé dans un thème plutôt qu'un autre n'est pas fait selon la même logique, le même découpage que dans les modèles Sandre.
+
+Par conséquent, on devrait plutôt chercher à alimenter les concepts du thème HY INSPIRE (par exemple à partir d'ETH que l'inverse). Le mapping devrait donc plutôt se faire thème INSPIRE -> Sandre.
+
+D’expérience en faisant cela,
+
+* on oublie moins de sources de données (par exemple les ManMade Object du thème INSPIRE HY ne sont pas dans le dictionnaire Sandre ETH 2002-1),
+* on gagne en cohérence globale (donc en réutilisation des données) en évitant de pousser ‘au chausse-pied’ plusieurs concepts nationaux dans un concept INSPIRE par ce que l’on chercher à mapper un seul dictionnaire plutôt qu’un système vers un autre.
+
+La conséquence directe de cette différence de philosophie se retrouve dans le document présenté à différents endroits.
+
+Par exemple, les deux chapitres (V.C.Structure du concept : Plan d’eau et V.D.Structure du concept : Élément hydrographique de surface) se retrouvent à être mappés vers INSPIRE HY:StandingWater.
+
+La logique derrière la conformité INSPIRE n’est pas d’exposer Entite et éléments hydrographiques de surface dans INSPIRE StandingWater mais bien d'exposer le référentiel des StandingWater (plans d’eau) français. Il faut donc faire un choix. Sinon, les données exposées vont mélanger deux choses.
+
+C’est d’ailleurs pour cela que les chapitres V.C et V.D sont fortement identiques.
+
+Un autre exemple résultant de cette différence d’approche est de ne trouver aucune mention des tronçons hydrographique au sens de la circulaire n°91-50 (les tronçons codifiés). Seuls les tronçons hydrographiques élémentaires (les non codifiés) sont ‘mappés’ alors que les tronçons codifiés peuvent être échangés à travers le modèle INSPIRE (ceci est l’objet d’un point spécifique dans ce document , voir : section 9.3, "Manque du mapping pour le concept de Tronçon hydrographique (Circulaire) »).
+
+Proposition : réorganiser le document en changeant le point de vue
+
+=== Transformation VS mise en conformité
+
+Commentaire : Le document s’intitule service de transformation. Quelle est l’action technique prévue pour mettre en place ce ‘mapping’ sémantique ?
+
+* Un service de transformation qui, pour un fichier ‘BD Carthage – sémantique Sandre’ fournirait un fichier ‘BD Carthage – sémantique INSPIRE’
+* et/ou simplement le déploiement de service web interopérables de téléchargement (OGC WFS 2.0.2 et/ou OGC API – Features) directement branchés sur les données SIE et les exposant conformément à la sémantique attendue.
+
+Proposition : Le pôle INSIDE ne saurait que trop recommander de procéder d’abord à la mise en place de service de téléchargement interopérables.
+
+La réalisation technique n’étant pas compliquée et les étant outils matures (ex : Geoserver avec ses extensions), cette approche permet de maximiser la réutilisation des données du référentiel hydrographique français (ex : par les autres SI fédérateurs de l’OFB et d’autres). Elle capitalisera également sur les années de R&D, maturation et contribution du pôle INSIDE sur le sujet au titre des SI Fédérateurs de l’OFB.
+
+A l’opposé, la seule mise en place d’un service de transformation peut s’avérer plus longue et un tel service peut se retrouver ‘isolé’ en périphérie des autres services Sandre. Ce qui serait dommageable quand on connait les possibilités qu’ouvrent un tel changement de paradigme.
+
+=== Schématisation
+
+Commentaire : Le document Sandre manque de schéma facilitant la compréhension de la philosophie de mise en correspondance.
+
+Ces schémas aideront également l’appropriation de la démarche par les non habitués des modèles INSPIRE, Sandre, voire des deux systèmes.
+
+Certes les modèles INSPIRE et Sandre sont disponibles dans leurs documents de référence respectifs mais quelques extraits aideraient grandement le lecteur. Une possibilité pourrait être en début de chaque nouveau ‘mapping’ de mettre un extrait des classes concernées dans les deux modèles.
+
+Une schématisation graphique de la mise en correspondance (‘mapping’) aiderait en un coup d’œil à s’y retrouver plutôt que de déduire la logique sous-jacente de mapping à la lecture progressive de chaque section.
+
+Il manque également un schéma expliquant comment parcourir le réseau à l’aide des concepts INSPIRE. Le modèle INSPIRE dissocie clairement les notions de Network et Physical Waters. La logique de modélisation est donc différente de celle du modèle Sandre ETH 2002-1. Il peut donc être utile d’expliquer au lecteur comment passer de la ‘vue’ Network à celle ‘Physical Waters’ sur les données françaises. Cela pourra également aider les personnes à s'approprier la philosophie du modèle INSPIRE HY.
+
+Proposition : Fournir plus de schémas dans le document
+
+=== Identification des éléments mis en correspondance
+
+Commentaire : Il faudrait écrire les noms des concepts/propriétés tels que dans les modèles respectifs (et/ou leurs balises XML voire même l'URI du concept/propriété) plutôt que les labels qui peuvent prêter à confusion.
+
+A titre d’exemple dans la section « V.E.Structure du concept : Tronçon hydrographique », de quel concept parle-t-on ? TRONCON HYDROGRAPHIQUE (Circulaire) VS TRONCON HYDROGRAPHIQUE ELEMENTAIRE.
+
+Plutôt TRONCON HYDROGRAPHIQUE ELEMENTAIRE, d'après la règle de nommage des GML id ("TronconHydrograElt"_...). Plus de précision dans les notations aiderait le lecteur à ne pas avoir à faire de déductions.
+
+Proposition : plus formaliser les mappings
+
+=== Identifiants
+
+==== Identifiants GML
+
+Commentaire : Le gml:identifier est absent du document. C’est un manque important.
+
+Il faut préciser dans le document les notions de
+
+* gml:id : identifiant technique unique à l'intérieur d'une réponse de service web (par exemple) avec aucune garantie que, pour le même objet, on aura le même à la prochaine requête
+* gml:identifier : identifiant unique externe qui a valeur de 'contrat' avec un système externe.
+
+De nombreux travaux visent à utiliser gml:identifier en lieu et place du type Identifier d'INSPIRE. En effet, depuis les débuts des modèles INSPIRE (il y a presque 15 ans), les systèmes d’information vont beaucoup plus vers du Linked Data. Le gml:identifier permet beaucoup plus facilement ceci. On peut tout à fait y avoir les mêmes informations que celles qui sont éclatées dans le type Identifier d'INSPIRE.
+
+Ce sujet est très fortement discuté/détaillé dans la sphère Inspire (ex : https://inspire.ec.europa.eu/implementation-identifiers-using-uris-inspire-%E2%80%93-frequently-asked-questions/59309 ).
+
+En complément, gml:identifier est générique (standard) et donc moins spécifique que le type Identifier d’INSPIRE.
+
+Proposition :
+
+De fait en début de chaque nouvelle section du document où il est précisé 'Identifiant GML' (ex : CoursEau_code Sandre, gml:id=CoursEau_----0000)
+
+* il est certes important de décider d’une heuristique pour peupler le gml:id d’un point de vue conformité technique gml pour des raisons d'unicité dans une réponse XML (seulement),
+* mais il est tout autant important (si ce n’est plus) de préciser le contenu de la balise gml:identifier (idéalement à partir des URIs du SIE). C’est cet élément qui a le plus de valeur ajoutée pour les utilisateurs externes et les API.
+
+==== HydroIdentifier
+
+Commentaire : Dans la section « III.A.3.Identifiants », en plus du texte déjà présent, il faut préciser que l'Hydro Identifier permet de passer d'une représentation Network à une représentation PhysicalWaters (ou autre) de l’instance concernée. Ce point est très important car le choix de modélisation de l’équipe du thème hydro à l’époque est un choix conceptuel que l’on ne croise pas beaucoup.
+
+Il a été fortement débattu à l’époque et revient de plus en plus au ‘goût du jour’ dans les travaux actuels sur le Linked Data au W3C où l’on va vers
+
+* une URI pour identifier différentes représentations du même objet du monde réel,
+* charge à la négociation de contenu par Profil de gérer quelle représentation le client veut et quelle représentation le système peut lui fournir,
+
+Du fait de ce choix de modélisation côté INSPIRE HY, il n'y a pas de modélisation explicite par exemple pour passer de la partie Network à la partie Physical Water (contrairement au modèle ETH 2002-1).
+
+Proposition : mieux expliquer la logique sous-jacente à l’Hydro Identifier INSPIRE
+
+==== Usage de hydro Id/ inspire Id
+
+Commentaire : Dans les sections ‘Structure de l’attribut : hydro Id’ (ex : V.B.1.d Structure de l’attribut : hydro Id), pourquoi ne pas reprendre le même namespace dans le mapping que celui pris pour inspire Id (qui correspond à la logique d'URI du SIE) ?
+
+<base:namespace>http://id.eaufrance.fr/CoursEau</base:namespace>
+
+<hy:namespace>FR</hy:namespace>
+
+La specification INSPIRE dit:
+
+"_An indicator of the scope for the local identifier_
+
+_Description: NOTE In the case of a national hydrographic identifier it should be a two-letter country code as per ISO 3166-1-Alpha-2._"
+
+Proposition : C'est un non-sens au regard d'approche Linked Data.
+
+Etant donné que c'est un SHOULD et non un SHALL on peut très bien remettre http://id.eaufrance.fr/CoursEau
+
+Note : la traduction dans la colonne 'Valeurs possibles' n'est pas bonne (SHOULD <> SHALL et cela a une grosse importance dans ce genre de document).
+
+Proposition sur la Note : Il faut remplacer "le namespace +++doit+++ être " par "le namespace +++peut+++ être' et revérifier les autres « traduction » de SHOULD/SHALL dans le document Sandre pour ne pas véhiculer de mauvaise information
+
+=== Usage des xlink:href/xlink:title
+
+Commentaire : De nombreux attributs utilisent des xlink:href (ex : pour faire le lien vers les codeList INSPIRE comme dans <hy-p:persistence
+
+xlink:href="http://inspire.ec.europa.eu/codelist/HydrologicalPersistenceValue/
+
+perennial"/>) .
+
+La bonne pratique internationalement appliquée est d’utiliser xlink:title en complément pour y donner le Label (prefLabel) de l’entrée dans la codeList utilisée.
+
+Ainsi cela permet d'avoir un contenu 'pour les humains' accompagnant les URIs (contenu pour les machines) et donc de bâtir des IHM dessus.
+
+Il restera à définir que le label est celui en français ou anglais par défaut dans les flux SIE. L’URI restant bien sûr la même ce choix n’est pas forcément très limitant pour les applications clientes.
+
+Proposition : ajouter des xlink:title
+
+=== Attribut uom
+
+Commentaire : L’attribut XML uom (Unit Of Measure) apparait de nombreuses fois (ex : V.B.2.a.2 Structure de l’attribut : length, V.C.2.a.1 Structure de l’attribut : elevation, …).
+
+La bonne pratique est d’utiliser de préférence une URI vers un des registres internationaux de référence sur les unités des mesures uom plutôt qu’un simple label (ex uom="http://qudt.org/vocab/unit/M"> plutôt que uom="m")
+
+Proposition : Remplacer l’usage actuel d’uom par des URIs
+
+=== levelOfDetail
+
+Commentaire : La propriété levelOfDetail apparait dans le document dans les sections ‘Attributs INSPIRE facultatifs’ avec
+
+* la mention globale suivante « les attributs INSPIRE sans équivalent Sandre mais qui ne sont pas obligatoires dans un fichier GML INSPIRE, ne sont pas ajoutés au fichier transformé »,
+* et un commentaire spécifique à l’objet considéré (ex : "Dans la BD Carthage®, tous les cours d’eau ont la même résolution").
+
+Justement dans la BD Carthage, la résolution étant contenu, cet attribut peut tout à fait être fourni avec une constante (MD_Resolution) au 1/50 000^e^. Cette information est importante pour tout organisme qui se lierait à un des objets ainsi fournis et qui n’aurait pas forcément la connaissance à priori de la chaîne de production de la BD Carthage.
+
+A titre d’exemple ce cas d’usage a déjà été rencontré dans le projet API4INSPIRE où des stations française et allemandes ont été ‘raccrochées’ au Rhin.
+
+Proposition : renseigner le levelOfDetail
+
+=== LifeSpanVersion (begin et end)
+
+Commentaire : Les propriétés beginLifespanVersion et endLifespanVersion apparaissent dans le document comme ne pouvant être peuplées. (ex V.B.2.a.5 Structure de l’attribut : begin Lifespan Version et V.B.2.b Attributs INSPIRE facultatifs).
+
+Pourquoi ne pas utiliser le versioning ('millésime") Carthage ? Millésime qui apparait d’ailleurs dans certaines URIs dans le document.
+
+Proposition : considérer la possibilité de renseigner beginLifespanVersion et endLifespanVersion
+
+==  « I.C.4.Interopérabilité des données »
+
+Commentaire : Dans cette présentation du contexte INSPIRE, il manque les règles techniques. A savoir les règles sur les services en réseau. A titre d’exemple, quel download service pour quoi faire, et ensuite comment un download service d’un type particulier (OGC WFS, OGC API Features, ...) doit se comporter.
+
+« _Règlement 1089/2010 du 23 novembre 2010_ » : préciser qu'il a été modifié par d'autres règlements dont un sur les codeLists
+
+Ajouter qu'une grosse partie des éléments présents dans les modèles UML des 'Data Specifications' INSPIRE a été de fait traduit dans le droit EU (puis français) via ces Implementing Rules qui se retrouvent dans les règlements
+
+Proposition : enrichir la description du contexte
+
+== « II.INTRODUCTION »
+
+Commentaire : "_Les objets géographiques du référentiel hydrographique Sandre se rapportent tous au thème INSPIRE « Hydrographie » décrit à l’Annexe I.8 de la directive_"
+
+* Pas forcément, par exemple certains types de nœuds hydrographiques et points d’eau isolé peuvent être dans d'autres thèmes INSPIRE
+
+Il manque la référence au Generic Network Model d’INSPIRE, ce modèle est crucial car le modèle du réseau hydro INSPIRE en dérive. Comprendre ce modèle INSPIRE permet de comprendre comment le réseau est modélisé.
+
+Proposition : enrichir la description
+
+== « III.DESCRIPTION DÉTAILLÉE DE LA TRANSFORMATION »
+
+=== « III.A.1.Caractère Obligatoire, Facultatif et Voidable d’un élément »
+
+Commentaire : Les voidReasonValue OGC ont également des URIs et ont une portée plus vaste que le ('standard GML') mentionné (ex : http://www.opengis.net/def/nil/OGC/0/unknown ).
+
+Proposition : ajouter les URIs OGC
+
+=== « III.A.6. Annotation des éléments XML enfants et parents »
+
+Commentaire : Un exemple XML aiderait la lecture.
+
+Proposition : l’ajouter
+
+=== « III.C.2.Balise racine »
+
+Commentaire : Ce point de la spécification WFS est compris différemment par les implémentations.
+
+Par exemple en réponse à un GetFeatureById, certaines implémentations ne vont pas retourner de gml:FeatureCollection/<wfs:member> mais la Feature directement (car on parle d'une collection de 1 instance).
+
+Autre exemple, un fichier GML pour une seule Feature pour peut tout à fait être généré sans utiliser de service WFS (ex : génération par une librairie scientifique et pas par un serveur web) donc pas besoin dans ce cas de la gml:FeatureCollection.
+
+Proposition : Ne pas forcer la présence de gml:FeatureCollection. ester dans le validateur INSPIRE si le même fichier GML mais sans la gml:FeatureCollection est considéré comme valide.
+
+== « V.B.Structure du concept : Cours d’eau »
+
+=== « V.B.2.a.9 Structure de l’attribut : drainsBasin »
+
+« _Note : On peut faire un lien hypertexte vers les zones hydrographiques si celles-ci sont disponibles au format GML INSPIRE. Dans le cas contraire, on laisse vide avec pour raison de l’absence de valeur « unpopulated »_ ».
+
+Commentaire : Avec une logique d'URI on devrait toujours pouvoir faire le lien vers les bassins versants traversés (on les connait dans Carthage et on a leurs identifiants).
+
+Qu'ensuite, derrière l'URI, ce Bassin Versant soit disponible en représentation INSPIRE (ou pas) est une autre question mais l'avantage des URIs c'est que l'on peut faire ce travail en parallèle.
+
+Ce sera ensuite à une forme de négociation de contenu de proposer les représentations disponibles.
+
+Proposition : autant mettre l'URI dès maintenant plutôt que de revoir le document
+
+Note : même remarque pour V.C.2.a.6 Structure de l’attribut : drainsBasin
+
+== « V.C.Structure du concept : Plan d’eau »
+
+=== « V.C.1.bStructure de l’attribut : geometry »
+
+Question : Quelle est la règle appliquée pour gérer le fait qu'INSPIRE demande du GM_Surface alors que Carthage a des multipolygones (des GM_MultiSurface) ?
+
+Note : Le GIGE avait déjà remonté le besoin vers les modélisateurs INSPIRE déjà à l'époque des spécifications HY en 1.1 et 2.0. Mais les spécifications n’avaient pas été changée en réponse.
+
+==  « V.E.Structure du concept : Tronçon hydrographique »
+
+=== «  V.E.1.g Structure des associations : end Node / start Node »
+
+« _Note : On devrait faire un lien hypertexte vers les nœuds hydrographiques amont et aval, si ceux-ci étaient disponibles au format GML INSPIRE. Dans l’attente de cette diffusion, et comme ces attributs ne peuvent être laissés vides, on ne les inclut pas dans le fichier transformé_ ».
+
+Commentaire : Même remarque que pour « drainsBasin »
+
+Proposition : mettre dès maintenant l'URI des Node
+
+=== « V.E.1.h Structure de l’association : in Network »
+
+« _Note : En considérant que le tronçon est un élément d’un réseau de tronçons hydrographiques formant un cours d’eau, on pourrait utiliser cette association pour indiquer le cours d’eau que compose ce tronçon. L’attribut xlink:href du type gml:ReferenceType doit contenir une URI, on peut donc indiquer l’URI sandre du cours d’eau_ ».
+
+Commentaire : c'est exactement comme ça que nous l'avons implémenté dans le cadre du projet API4INSPIRE (cf https://iddata.eaufrance.fr/id/WatercourseLink/_200029400?f=application%2Fgeo%2Bjson ).
+
+Oui au regard de l'UML il faudrait une instance de la classe Network:Network.
+
+Mais il n’est pas forcément surprenant que le parseur INSPIRE ne réagisse pas. Il ne traverse pas forcément les références pour aller vérifier leur typage par rapport au modèle. De plus, nous sortons du modèle HY ici. Cette partie vient du Generic Network Model et n'est donc pas spécifique à l'hydro.
+
+D'un autre côté ce 'hack' du modèle est très utile et est 'presque' la seule solution pour passer du tronçon au cours d'eau (physical waters).
+
+Proposition : « _Dans l’attente de plus d’informations sur le contenu attendu de cet attribut, on indiquera l’URI du cours d’eau associé au tronçon afin de limiter la perte d’information lors de la transformation_ » -> rester sur cette proposition.
+
+« Exemple GML : <net:inNetwork xlink:href=
+
+"http://id.eaufrance.fr/CoursEau_Carthage2017/E3340600"/> »
+
+Commentaire : L'URI proposée est surprenante et ne correspond pas aux pratiques habituelles du LinkedData (ex : cf W3C Data on the Web Best Practices). On a plutôt à mettre un version indicator à la toute fin d'une URI et, si aucune version n’est spécifiée, fournir la dernière représentation disponible (latest). La structure actuelle de l’URI sous-entend que tous les jeux de données liés à cette entité l'appellent par sa version (ce qui peut être UseCase mais peut-être pas le plus majoritaire)
+
+Question : le Sandre propose-t-il des URIs de Cours d'Eau "non versionnées" (lire fournissant toujours le latest et permettant à partir de celle-ci de remonter dans l'historique de version ) ?
+
+=== Manque du mapping pour le concept de Tronçon hydrographique (Circulaire) 
+
+Commentaire : Les tronçons au sens de la circulaire n°91-50 (donc codifiés) peuvent être échangés en utilisant hy-nWatercourseLinkSequence.
+
+Ceci permettra alors de traverser tout le réseau hydrographique à l'aide de concept INSPIRE et d'URI (c'est ce qui a été fait dans le cadre du projet API4INSPIRE).
+
+Proposition : Ajouter ce mapping dans le document.
+
+== « V.F.Structure du concept : Nœud hydrographique »
+
+===  « V.F.2.a.2 Structure de l'attribut : in Network »
+
+Question : Pourquoi ne pas l'utiliser comme suggéré dans la section 'V.E.1.h Structure de l’association : in Network' ? cela serait cohérent est très utile (pour les mêmes raisons que celles mentionnées plus haut).
+
+Proposition : ré-évaluer le mapping proposé au regard du commentaire.
+
+== « V.C.Structure du concept : Plan d’eau »
+
+Commentaire : il n'y a pas de concept de plan d'eau dans ETH 2002-1. Seulement des « Entite hydrographique de surface » composées « d'éléments hydrographiques de surface ».
+
+Le concept de Plan d'Eau est modélisé dans le dictionnaire PLA.
+
+Par contre lors du projet BNPE s'est posé la question d'alimenter le référentiel PLA à partir de la BD Carthage (pour le rattachement point de prélèvement – référentiel Plan d’Eau).
+
+Il y a eu une décision GIGE vers 2010 (date à vérifier dans les CR) de ne retenir que certains éléments de l’hydrographie de surface selon la valeur de leur champ type pour alimenter le référentiel des plans d’eau (exemple au format shp : table attributaire HYDROGRAPHIE_SURFACIQUE, champ TYPE).
+
+Proposition : retrouver la décision du GIGE de l’époque, clarifier le mapping et, selon le choix, peut être élargir de fait le périmètre du présent document.
+
+==  Conclusion
+
+Cette analyse des premiers documents du ST Sandre sur le sujet est importante car
+
+- Elle permet de cadrer l’approche au mieux dès le début pour une meilleure propagation au reste des concepts du SIE et également dans l’architecture sous-jacente,
+
+- Il ne s’agit pas en réalité d’un simple travail de transformation mais bel et bien d’un changement de paradigme dans la façon d’exposer les données rapprochant les données du SIE des bonnes pratiques internationales en cours,
+
+- Par conséquent ce travail pourra également servir de base à une meilleure connexion vers les autres SI nationaux (entre autre les SI fédérateurs de l’OFB) et également vers d’autres dynamiques nationales et internationales (données de la rechercher par exemple avec des Infrastructures de Recherches telles OZCAR/THEIA).
+
+Cette analyse fait ressortir à la fois des retours
+
+- sur l’approche globale,
+
+- et sur certaines mises en correspondance (mappings), certains choix spécifiques.
+
+Il conviendra également de clarifier l’action technique qui sera mise en place suite à ce document.
+
+Le pôle INSIDE ne saurait que trop recommander de procéder d’abord à la mise en place de service de téléchargement interopérables.
+
+La réalisation technique n’étant pas compliquée et les étant outils matures (ex : Geoserver avec ses extensions), cette approche permet de maximiser la réutilisation des données du référentiel hydrographique français (ex : par les autres SI fédérateurs de l’OFB et d’autres). Elle capitalisera également sur les années de R&D, maturation et contribution du pôle INSIDE sur le sujet au titre des SI Fédérateurs de l’OFB.
