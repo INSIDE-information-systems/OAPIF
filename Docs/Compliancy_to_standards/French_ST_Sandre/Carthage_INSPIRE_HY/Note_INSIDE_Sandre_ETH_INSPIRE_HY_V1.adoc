@@ -1,5 +1,4 @@
 == Analyse du scénario de transformation - Diffusion du référentiel hydrographique (BD Carthage®) au format INSPIRE (version 1Beta9) proposé par le Secrétariat Technique du SANDRE
-- Janvier 2022
 
 == Metadonnées
 
